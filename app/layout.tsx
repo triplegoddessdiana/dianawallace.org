@@ -14,10 +14,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Diana Wallace",
+  metadataBase: new URL("https://dianawallace.org"),
+  title: {
+    default: "Diana Wallace",
+    template: "%s · Diana Wallace",
+  },
   description:
-    "Essays, books, and audio on human sovereignty, memory, and meaning in an automated world.",
+    "Essays, books, and audio by Diana Wallace on human sovereignty, memory, and meaning in an automated world.",
 };
+
+;
 
 export default function RootLayout({
   children,
