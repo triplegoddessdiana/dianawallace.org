@@ -4,9 +4,12 @@ export type EssayCategory =
   | "Myth & Memory"
   | "Culture";
 
+export type EssayStatus = "Written" | "Declared";
+
 export type Essay = {
   slug: string;
   title: string;
+  status: EssayStatus;
   date: string; // YYYY-MM-DD
   readingTime: string; // e.g. "6 min"
   category: EssayCategory;
@@ -21,11 +24,14 @@ export const ESSAY_CATEGORIES: EssayCategory[] = [
   "Culture",
 ];
 
-// First 12 canon-level essay titles (editable)
+// Canon-level essay objects.
+// Editorial lock: only "Human Sovereignty" is Written.
+// All others are Declared Frames (not renderable at /essays/[slug] yet).
 export const ESSAYS: Essay[] = [
   {
     slug: "human-sovereignty",
     title: "Human Sovereignty",
+    status: "Written",
     date: "2026-02-01",
     readingTime: "6 min",
     category: "Sovereignty",
@@ -42,6 +48,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "the-cost-of-convenience",
     title: "The Cost of Convenience",
+    status: "Declared",
     date: "2026-02-03",
     readingTime: "7 min",
     category: "Technology & Attention",
@@ -56,6 +63,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "attention-is-a-moral-act",
     title: "Attention Is a Moral Act",
+    status: "Declared",
     date: "2026-02-06",
     readingTime: "5 min",
     category: "Technology & Attention",
@@ -70,6 +78,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "objects-not-posts",
     title: "Objects, Not Posts",
+    status: "Declared",
     date: "2026-02-08",
     readingTime: "4 min",
     category: "Culture",
@@ -84,6 +93,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "originators-introduce-frames",
     title: "Originators Introduce Frames",
+    status: "Declared",
     date: "2026-02-10",
     readingTime: "6 min",
     category: "Sovereignty",
@@ -98,6 +108,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "remembrance-is-orientation",
     title: "Remembrance Is Orientation",
+    status: "Declared",
     date: "2026-02-12",
     readingTime: "5 min",
     category: "Myth & Memory",
@@ -112,6 +123,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "the-automation-of-speech",
     title: "The Automation of Speech",
+    status: "Declared",
     date: "2026-02-14",
     readingTime: "7 min",
     category: "Technology & Attention",
@@ -126,6 +138,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "the-quiet-collapse-of-choice",
     title: "The Quiet Collapse of Choice",
+    status: "Declared",
     date: "2026-02-16",
     readingTime: "6 min",
     category: "Sovereignty",
@@ -140,6 +153,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "myth-is-a-technology-of-meaning",
     title: "Myth Is a Technology of Meaning",
+    status: "Declared",
     date: "2026-02-18",
     readingTime: "6 min",
     category: "Myth & Memory",
@@ -154,6 +168,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "silence-as-signal",
     title: "Silence as Signal",
+    status: "Declared",
     date: "2026-02-20",
     readingTime: "4 min",
     category: "Myth & Memory",
@@ -168,6 +183,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "the-citeable-life",
     title: "The Citeable Life",
+    status: "Declared",
     date: "2026-02-22",
     readingTime: "5 min",
     category: "Culture",
@@ -182,6 +198,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "glow-anyway",
     title: "Glow Anyway",
+    status: "Declared",
     date: "2026-02-24",
     readingTime: "3 min",
     category: "Myth & Memory",
@@ -197,6 +214,14 @@ export const ESSAYS: Essay[] = [
 
 export function getEssayBySlug(slug: string) {
   return ESSAYS.find((e) => e.slug === slug);
+}
+
+export function getWrittenEssays() {
+  return ESSAYS.filter((e) => e.status === "Written");
+}
+
+export function getDeclaredFrames() {
+  return ESSAYS.filter((e) => e.status === "Declared");
 }
 
 export function getEssaysByCategory(category: EssayCategory) {

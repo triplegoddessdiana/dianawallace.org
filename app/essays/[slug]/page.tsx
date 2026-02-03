@@ -1,78 +1,55 @@
-import Link from "next/link";
-import { getEssayBySlug, ESSAYS } from "../../lib/essays";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import { getEssayBySlug, getWrittenEssays } from "@/app/lib/essays";
 
-/**
- * This pre-builds all essay pages at build time
- * so they are fast, stable, and fully indexable.
- */
+type Props = {
+  params: { slug: string };
+};
+
 export function generateStaticParams() {
-  return ESSAYS.map((essay) => ({
-    slug: essay.slug,
-  }));
+  return getWrittenEssays().map((e) => ({ slug: e.slug }));
 }
 
-/**
- * Per-essay SEO + canonical URL
- */
-export function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export function generateMetadata({ params }: Props): Metadata {
   const essay = getEssayBySlug(params.slug);
 
-  if (!essay) return {};
+  if (!essay || essay.status !== "Written") {
+    return {
+      title: "Essay",
+      robots: { index: false, follow: false },
+    };
+  }
+
+  const canonical = `https://dianawallace.org/essays/${essay.slug}`;
 
   return {
     title: essay.title,
-    description: essay.abstract,
     alternates: {
-      canonical: `/essays/${essay.slug}`,
+      canonical,
     },
+    description: essay.abstract,
   };
 }
 
-export default function EssayPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default function EssayPage({ params }: Props) {
   const essay = getEssayBySlug(params.slug);
 
-  if (!essay) {
-    return (
-      <>
-        <h1>Not found</h1>
-        <p>This essay does not exist.</p>
-        <p>
-          <Link href="/essays">Back to Essays</Link>
-        </p>
-      </>
-    );
-  }
+  if (!essay) notFound();
+  if (essay.status !== "Written") notFound();
 
   return (
-    <>
+    <main>
       <h1>{essay.title}</h1>
 
-      <p style={{ color: "var(--muted)" }}>
+      <p>
         {essay.date} · {essay.readingTime} · {essay.category}
       </p>
 
-      <p>
-        <strong>{essay.abstract}</strong>
-      </p>
+      <p>{essay.abstract}</p>
 
-      {essay.body.map((paragraph, i) => (
-        <p key={i}>{paragraph}</p>
+      {essay.body.map((para, i) => (
+        <p key={i}>{para}</p>
       ))}
-
-      <hr />
-
-      <p>
-        If this moved you, begin here →{" "}
-        <Link href="/start">Start Here</Link>
-      </p>
-    </>
+    </main>
   );
 }
