@@ -1,55 +1,60 @@
-import { notFound } from "next/navigation";
-import type { Metadata } from "next";
-import { getEssayBySlug, getWrittenEssays } from "@/app/lib/essays";
+import Link from "next/link";
+import { getWrittenEssays, getDeclaredFrames } from "@/app/lib/essays";
 
-type Props = {
-  params: { slug: string };
+export const metadata = {
+  title: "Essays",
 };
 
-export function generateStaticParams() {
-  return getWrittenEssays().map((e) => ({ slug: e.slug }));
-}
+// Declared primary (not yet written). Keep this as a title match for now.
+const PRIMARY_DECLARED_TITLE = "Attention Is a Moral Act";
 
-export function generateMetadata({ params }: Props): Metadata {
-  const essay = getEssayBySlug(params.slug);
+export default function EssaysPage() {
+  const written = getWrittenEssays(); // linked
+  const declared = getDeclaredFrames(); // plain text
 
-  if (!essay || essay.status !== "Written") {
-    return {
-      title: "Essay",
-      robots: { index: false, follow: false },
-    };
-  }
-
-  const canonical = `https://dianawallace.org/essays/${essay.slug}`;
-
-  return {
-    title: essay.title,
-    alternates: {
-      canonical,
-    },
-    description: essay.abstract,
-  };
-}
-
-export default function EssayPage({ params }: Props) {
-  const essay = getEssayBySlug(params.slug);
-
-  if (!essay) notFound();
-  if (essay.status !== "Written") notFound();
+  const primaryDeclared = declared.find((e) => e.title === PRIMARY_DECLARED_TITLE) ?? null;
+  const declaredFrames = declared.filter((e) => e.title !== PRIMARY_DECLARED_TITLE);
 
   return (
     <main>
-      <h1>{essay.title}</h1>
+      <h1>Essays</h1>
 
       <p>
-        {essay.date} · {essay.readingTime} · {essay.category}
+        Essays here are intended to introduce frames — ways of seeing — rather than to win
+        arguments.
       </p>
 
-      <p>{essay.abstract}</p>
+      <p>
+        Some texts are written and stand as complete objects. Others are declared in
+        advance, defining the conceptual boundaries of the work.
+      </p>
 
-      {essay.body.map((para, i) => (
-        <p key={i}>{para}</p>
-      ))}
+      <h2>Primary (Written)</h2>
+      {written.length === 0 ? (
+        <p>—</p>
+      ) : (
+        <ul>
+          {written.map((e) => (
+            <li key={e.slug}>
+              <Link href={`/essays/${e.slug}`}>{e.title}</Link>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <h2>Primary (Declared)</h2>
+      {primaryDeclared ? <ul><li>{primaryDeclared.title}</li></ul> : <p>—</p>}
+
+      <h2>Declared Frames</h2>
+      {declaredFrames.length === 0 ? (
+        <p>—</p>
+      ) : (
+        <ul>
+          {declaredFrames.map((e) => (
+            <li key={e.slug}>{e.title}</li>
+          ))}
+        </ul>
+      )}
     </main>
   );
 }
