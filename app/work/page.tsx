@@ -1,20 +1,30 @@
-<h1>The Work</h1>
+export const metadata = {
+  title: "The Work",
+};
 
-<p>
-This site houses a single body of work composed of essays, definitions, and
-philosophical texts.
-</p>
+export default function WorkPage() {
+  return (
+    <main>
+      <h1>The Work</h1>
 
-<p>
-The work is not organized by project, medium, or chronology.
-It is organized by coherence.
-</p>
+      <p>
+        This site houses a single body of work composed of essays, definitions,
+        and philosophical texts.
+      </p>
 
-<p>
-Individual pieces may originate elsewhere, but only those that can stand
-independently are included here.
-</p>
+      <p>
+        The work is not organized by project, medium, or chronology.
+        It is organized by coherence.
+      </p>
 
-<p>
-Nothing on this site is provisional.
-</p>
+      <p>
+        Individual pieces may originate elsewhere, but only those that can stand
+        independently are included here.
+      </p>
+
+      <p>
+        Nothing on this site is provisional.
+      </p>
+    </main>
+  );
+}
