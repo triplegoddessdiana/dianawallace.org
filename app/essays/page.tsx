@@ -5,9 +5,15 @@ export const metadata = {
   title: "Essays",
 };
 
+// Declared primary (not yet written). Keep this as a title match for now.
+const PRIMARY_DECLARED_TITLE = "Attention Is a Moral Act";
+
 export default function EssaysPage() {
-  const written = getWrittenEssays();
-  const declared = getDeclaredFrames();
+  const written = getWrittenEssays(); // linked
+  const declared = getDeclaredFrames(); // plain text
+
+  const primaryDeclared = declared.find((e) => e.title === PRIMARY_DECLARED_TITLE) ?? null;
+  const declaredFrames = declared.filter((e) => e.title !== PRIMARY_DECLARED_TITLE);
 
   return (
     <main>
@@ -17,12 +23,13 @@ export default function EssaysPage() {
         Essays here are intended to introduce frames — ways of seeing — rather than to win
         arguments.
       </p>
+
       <p>
         Some texts are written and stand as complete objects. Others are declared in
         advance, defining the conceptual boundaries of the work.
       </p>
 
-      <h2>Written</h2>
+      <h2>Primary (Written)</h2>
       {written.length === 0 ? (
         <p>—</p>
       ) : (
@@ -35,12 +42,19 @@ export default function EssaysPage() {
         </ul>
       )}
 
+      <h2>Primary (Declared)</h2>
+      {primaryDeclared ? <ul><li>{primaryDeclared.title}</li></ul> : <p>—</p>}
+
       <h2>Declared Frames</h2>
-      <ul>
-        {declared.map((e) => (
-          <li key={e.slug}>{e.title}</li>
-        ))}
-      </ul>
+      {declaredFrames.length === 0 ? (
+        <p>—</p>
+      ) : (
+        <ul>
+          {declaredFrames.map((e) => (
+            <li key={e.slug}>{e.title}</li>
+          ))}
+        </ul>
+      )}
     </main>
   );
 }
