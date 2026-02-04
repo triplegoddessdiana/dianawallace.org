@@ -40,6 +40,7 @@ export default function RootLayout({
             <div className="nav-links">
               <Link href="/work">The Work</Link>
               <Link href="/books">Books</Link>
+              <Link href="/audio">Audio</Link>
               <Link href="/essays">Essays</Link>
               <Link href="/philosophy">Philosophy</Link>
               <Link href="/about">About</Link>
