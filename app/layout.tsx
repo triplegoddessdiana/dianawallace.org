@@ -23,8 +23,6 @@ export const metadata: Metadata = {
     "Essays, books, and audio by Diana Wallace on human sovereignty, memory, and meaning in an automated world.",
 };
 
-;
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,39 +31,39 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-  <header className="site-header">
-    <nav className="site-nav" aria-label="Primary">
-      <Link className="brand" href="/">
-  Diana Wallace
-</Link>
+        <header className="site-header">
+          <nav className="site-nav" aria-label="Primary">
+            <Link className="brand" href="/">
+              Diana Wallace
+            </Link>
 
+            <div className="nav-links">
+              <Link href="/work">The Work</Link>
+              <Link href="/books">Books</Link>
+              <Link href="/essays">Essays</Link>
+              <Link href="/philosophy">Philosophy</Link>
+              <Link href="/about">About</Link>
+              <Link className="start-button" href="/start">
+                Start Here
+              </Link>
+            </div>
+          </nav>
+        </header>
 
-      <div className="nav-links">
-        <Link href="/work">The Work</Link>
-        <Link href="/essays">Essays</Link>
-        <Link href="/philosophy">Philosophy</Link>
-        <Link href="/about">About</Link>
-        <Link className="start-button" href="/start">
-          Start Here
-        </Link>
-      </div>
-    </nav>
-  </header>
+        <main className="page">{children}</main>
 
-  <main className="page">{children}</main>
-
-  <footer className="site-footer">
-    <p className="footer-links">
-      <span>© {new Date().getFullYear()} Diana Wallace</span>
-      <span aria-hidden="true"> · </span>
-      <a href="/privacy">Privacy</a>
-      <span aria-hidden="true"> · </span>
-      <a href="/press">Press</a>
-      <span aria-hidden="true"> · </span>
-      <a href="/contact">Contact</a>
-    </p>
-  </footer>
-</body>
+        <footer className="site-footer">
+          <p className="footer-links">
+            <span>© {new Date().getFullYear()} Diana Wallace</span>
+            <span aria-hidden="true"> · </span>
+            <a href="/privacy">Privacy</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/press">Press</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/contact">Contact</a>
+          </p>
+        </footer>
+      </body>
     </html>
   );
 }
