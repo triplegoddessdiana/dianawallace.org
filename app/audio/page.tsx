@@ -19,12 +19,12 @@ export default function AudioPage() {
       <h2>Listen</h2>
       <ul>
         <li>
-          <a href="https://open.spotify.com/" target="_blank" rel="noreferrer">
+          <a href="https://open.spotify.com/show/22TxQiPHN1gAjE4ovhQjbk?si=60beb7a5f2b14ee7" target="_blank" rel="noreferrer">
             Spotify
           </a>
         </li>
         <li>
-          <a href="https://podcasts.apple.com/" target="_blank" rel="noreferrer">
+          <a href="https://podcasts.apple.com/us/podcast/expect-nothing/id1853438881" target="_blank" rel="noreferrer">
             Apple Podcasts
           </a>
         </li>
