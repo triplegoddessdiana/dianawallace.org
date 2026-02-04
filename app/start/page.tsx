@@ -1,63 +1,52 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Diana Wallace",
+  title: "Start Here",
 };
 
-export default function HomePage() {
+export default function StartHerePage() {
   return (
     <main>
-      <h1>Diana Wallace</h1>
+      <h1>Start Here</h1>
 
       <p>
-        These are the written materials I consider finished enough to stand without
-        explanation.
+        This site is a canonical archive. It is not updated on a schedule.
       </p>
 
-      <p>
-        Some are essays.
-        <br />
-        Some are definitions.
-        <br />
-        Some exist to clarify the others.
-      </p>
-
-      <p>
-        The site is arranged as a working archive rather than a narrative of progress.
-        <br />
-        Pieces may contradict earlier ones. That is permitted.
-      </p>
-
-      <p>
-        There is no recommended pace.
-        <br />
-        There is no preferred outcome.
-      </p>
-
-      <p>What remains is what holds.</p>
-
-      <h2>Index</h2>
+      <h2>Begin</h2>
       <ul>
         <li>
-          <Link href="/start">Start Here</Link>
+          <strong>Primary (Written):</strong>{" "}
+          <Link href="/essays/human-sovereignty">Human Sovereignty</Link>
         </li>
         <li>
-          <Link href="/essays">Essays</Link>
+          <strong>Constraints:</strong> <Link href="/philosophy">Philosophy</Link>
         </li>
         <li>
-          <Link href="/philosophy">Philosophy</Link>
+          <strong>Index:</strong> <Link href="/essays">Essays</Link>
+        </li>
+      </ul>
+
+      <h2>Forms</h2>
+      <ul>
+        <li>
+          <strong>Books:</strong> <Link href="/books">Books</Link>
         </li>
         <li>
-          <Link href="/books">Books</Link>
+          <strong>Audio:</strong> <Link href="/audio">Audio</Link>
+        </li>
+      </ul>
+
+      <h2>Pace</h2>
+      <ul>
+        <li>
+          <strong>Five minutes:</strong> read one essay.
         </li>
         <li>
-          <Link href="/audio">Audio</Link>
+          <strong>Thirty minutes:</strong> read one essay and the Philosophy page.
         </li>
         <li>
-          <Link href="/work">The Work</Link>
-        </li>
-        <li>
-          <Link href="/about">About</Link>
+          <strong>Depth:</strong> return over time.
         </li>
       </ul>
     </main>
