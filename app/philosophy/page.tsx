@@ -9,8 +9,7 @@ export default function PhilosophyPage() {
 
 
       <p>
-        This site treats writing as a way of orienting attention, not as a method of
-        persuasion.
+        This site treats writing as a way of orienting attention.
       </p>
 
       <p>The following axioms define the conceptual boundaries of the work.</p>
