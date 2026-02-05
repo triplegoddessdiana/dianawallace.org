@@ -17,7 +17,8 @@ export default function EssaysPage() {
 
   return (
     <main>
-      <h1>Essays</h1>
+      <h1 data-redundant="true">Essays</h1>
+
 
       <p>
         Essays here are intended to introduce frames — ways of seeing — rather than to win

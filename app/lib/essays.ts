@@ -136,8 +136,8 @@ export const ESSAYS: Essay[] = [
     ],
   },
   {
-    slug: "the-quiet-collapse-of-choice",
-    title: "The Quiet Collapse of Choice",
+    slug: "choice-without-force",
+    title: "Choice Without Force",
     status: "Declared",
     date: "2026-02-16",
     readingTime: "6 min",

@@ -1,9 +1,18 @@
+export const metadata = {
+  title: "Contact",
+};
+
 export default function ContactPage() {
   return (
     <>
-      <h1>Contact</h1>
+      <h1 data-redundant="true">Contact</h1>
+
       <p>
-        For inquiries, you may reach me at <em>[email]</em>.
+        For correspondence regarding the work:
+        <br />
+        <a href="mailto:contact@dianawallace.org">
+          contact@dianawallace.org
+        </a>
       </p>
     </>
   );

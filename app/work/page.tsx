@@ -4,27 +4,24 @@ export const metadata = {
 
 export default function WorkPage() {
   return (
-    <main>
-      <h1>The Work</h1>
+    <>
+      <h1 data-redundant="true">The Work</h1>
 
-      <p>
-        This site houses a single body of work composed of essays, definitions,
-        and philosophical texts.
-      </p>
+      <div className="prose">
+        <p>
+          This site houses a single body of work composed of essays, definitions,
+          and philosophical texts.
+        </p>
 
-      <p>
-        The work is not organized by project, medium, or chronology.
-        It is organized by coherence.
-      </p>
+        <p>The work is organized by coherence.</p>
 
-      <p>
-        Individual pieces may originate elsewhere, but only those that can stand
-        independently are included here.
-      </p>
+        <p>
+          Individual pieces may originate elsewhere, but only those that stand
+          independently are included here.
+        </p>
 
-      <p>
-        Nothing on this site is provisional.
-      </p>
-    </main>
+        <p>Nothing on this site is provisional.</p>
+      </div>
+    </>
   );
 }

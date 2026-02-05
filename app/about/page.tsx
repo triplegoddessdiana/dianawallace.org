@@ -4,22 +4,19 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main>
-      <h1>About</h1>
+    <main className="page about">
+      <h1 data-redundant="true">About</h1>
 
-      <p>
-        This work is authored by Diana Wallace.
-      </p>
+      <figure className="about-signature">
+        <img
+          src="/about/diana-wallace-signature.png"
+          alt="Diana Wallace signature"
+        />
+      </figure>
 
-      <p>
-        It is written slowly, revised deliberately, and released without regard
-        for metrics or trends.
-      </p>
-
-      <p>
-        The author does not attempt to persuade, instruct, or perform expertise.
-        The work is offered as orientation.
-      </p>
+      <div className="prose">
+        <p>I’m Diana Wallace.</p>
+      </div>
     </main>
   );
 }

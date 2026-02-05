@@ -1,9 +1,18 @@
+export const metadata = {
+  title: "Press",
+};
+
 export default function PressPage() {
   return (
     <>
-      <h1>Press</h1>
+      <h1 data-redundant="true">Press</h1>
+
       <p>
-        For press or media inquiries, please contact <em>[email]</em>.
+        Press inquiries:
+        <br />
+        <a href="mailto:press@dianawallace.org">
+          press@dianawallace.org
+        </a>
       </p>
     </>
   );

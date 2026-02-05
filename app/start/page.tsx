@@ -1,54 +1,64 @@
 import Link from "next/link";
 
-export const metadata = {
-  title: "Start Here",
-};
+export const metadata = { title: "Start Here" };
 
 export default function StartHerePage() {
   return (
-    <main>
+    <>
       <h1>Start Here</h1>
 
-      <p>
-        This site is a canonical archive. It is not updated on a schedule.
+      <p className="lede">
+        This site is a canonical archive. 
       </p>
 
-      <h2>Begin</h2>
-      <ul>
-        <li>
-          <strong>Primary (Written):</strong>{" "}
-          <Link href="/essays/human-sovereignty">Human Sovereignty</Link>
-        </li>
-        <li>
-          <strong>Constraints:</strong> <Link href="/philosophy">Philosophy</Link>
-        </li>
-        <li>
-          <strong>Index:</strong> <Link href="/essays">Essays</Link>
-        </li>
-      </ul>
+      <section className="section">
+        <h2>Begin</h2>
+        <dl className="kv">
+          <dt>Primary </dt>
+          <dd>
+            <Link href="/essays/human-sovereignty">Human Sovereignty</Link>
+          </dd>
 
-      <h2>Forms</h2>
-      <ul>
-        <li>
-          <strong>Books:</strong> <Link href="/books">Books</Link>
-        </li>
-        <li>
-          <strong>Audio:</strong> <Link href="/audio">Audio</Link>
-        </li>
-      </ul>
+          <dt>Axioms</dt>
+          <dd>
+            <Link href="/philosophy">Philosophy</Link>
+          </dd>
 
-      <h2>Pace</h2>
-      <ul>
-        <li>
-          <strong>Five minutes:</strong> read one essay.
-        </li>
-        <li>
-          <strong>Thirty minutes:</strong> read one essay and the Philosophy page.
-        </li>
-        <li>
-          <strong>Depth:</strong> return over time.
-        </li>
-      </ul>
-    </main>
+          <dt>Index</dt>
+          <dd>
+            <Link href="/essays">Essays</Link>
+          </dd>
+        </dl>
+      </section>
+
+      <section className="section">
+        <h2>Forms</h2>
+        <dl className="kv">
+          <dt>Books</dt>
+          <dd>
+            <Link href="/books">Books</Link>
+          </dd>
+
+          <dt>Audio</dt>
+          <dd>
+            <Link href="/audio">Audio</Link>
+          </dd>
+        </dl>
+      </section>
+
+      <section className="section">
+        <h2>Pace</h2>
+        <dl className="kv">
+          <dt>Five minutes</dt>
+          <dd>One essay.</dd>
+
+          <dt>Thirty minutes</dt>
+          <dd>One essay and Philosophy.</dd>
+
+          <dt>Depth</dt>
+          <dd>Return over time.</dd>
+        </dl>
+      </section>
+    </>
   );
 }

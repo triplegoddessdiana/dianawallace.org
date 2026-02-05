@@ -1,67 +1,74 @@
 @import "tailwindcss";
 
+/* ===============================
+   Design tokens
+   =============================== */
+
 :root {
+  --bg: #f8f7f5;     /* warm paper */
   --text: #111;
-  --muted: #666;
-  --max-width: 65ch;
+  --muted: #6f6a63;     /* warm gray */
+  --rule: #e3ddd6;      /* divider */
+
+  --max: 60ch;
+  --pad-x: 1.25rem;
+
+  --stack: 0.65rem;
+  --para: 0.85rem;
 }
 
-* {
-  box-sizing: border-box;
-}
+/* ===============================
+   Base
+   =============================== */
 
-html {
-  font-size: 16px;
-}
+* { box-sizing: border-box; }
+html { font-size: 16px; }
 
 body {
   margin: 0;
-  background: #fff;
+  background: var(--bg);
   color: var(--text);
-  font-family: var(--font-geist-sans), serif;
+
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui,
+    -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  font-size: 0.95rem;
   line-height: 1.6;
+
 }
 
-.page {
-  max-width: var(--max-width);
-  margin: 4rem auto;
-  padding: 0 1.25rem;
-}
-
-h1, h2, h3 {
-  font-weight: 500;
-  line-height: 1.25;
-}
-
-h1 {
-  font-size: 2.25rem;
-  margin-bottom: 1.5rem;
-}
-
-p {
-  margin: 1rem 0;
-}
+/* ===============================
+   Links
+   =============================== */
 
 a {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: 1px solid #d0cbc4;
+  padding-bottom: 1px;
 }
 
 a:hover {
-  opacity: 0.85;
+  border-bottom-color: #8f8a84;
+  opacity: 1;
 }
+
+/* ===============================
+   Header / Nav
+   =============================== */
+
 .site-header {
   position: sticky;
   top: 0;
-  background: #fff;
-  border-bottom: 1px solid #eee;
   z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
 }
 
 .site-nav {
-  max-width: var(--max-width);
+  max-width: var(--max);
   margin: 0 auto;
-  padding: 1rem 1.25rem;
+  padding: 0.9rem var(--pad-x);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -70,59 +77,303 @@ a:hover {
 
 .brand {
   text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  margin-right: 2rem;
+  border-bottom: 0;
+  font-weight: 600;
   white-space: nowrap;
 }
-
 
 .nav-links {
   display: flex;
-  align-items: center;
-  gap: 1.25rem;
+  gap: 1.1rem;
   white-space: nowrap;
+  align-items: center;
 }
-
-
 
 .nav-links a {
   text-decoration: none;
+  border-bottom: 0;
   color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .nav-links a:hover {
   color: var(--text);
-  opacity: 1;
-  .nav-links a {
-  font-size: 0.95rem;
-}
 }
 
 .start-button {
-  color: var(--text) !important;
-  border: 1px solid #ddd;
-  padding: 0.35rem 0.6rem;
+  border: 1px solid #d6d0c9;
   border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+  color: var(--text);
+  border-bottom: 0;   /* no underline */
+}
+.start-button:hover { border-color: #bfb9b2; }
+
+
+
+/* ===============================
+   Main column
+   =============================== */
+
+.page {
+  max-width: var(--max);
+  margin: 2.25rem auto 3rem;
+  padding: 0 var(--pad-x);
 }
 
-.start-button:hover {
-  border-color: #bbb;
+.page > * + * {
+  margin-top: var(--stack);
 }
 
-.site-footer {
-  max-width: var(--max-width);
-  margin: 3rem auto 2.5rem;
-  padding: 0 1.25rem;
+/* ===============================
+   Headings
+   =============================== */
+
+/* Display titles (Books page, Start Here, etc.) */
+/* Page titles — unified */
+.page h1 {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui,
+    -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+/* Section headings */
+.page h2 {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui,
+    -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 0.85rem;          /* smaller than H1 */
+  font-weight: 600;            /* same weight as H1 */
+  letter-spacing: 0.14em;      /* same tracking as H1 */
+  text-transform: uppercase;
+  color: var(--muted);         /* same color family */
+  margin-top: 2.25rem;
+  margin-bottom: 0.85rem;
+}
+
+
+
+/* ===============================
+   Paragraph rhythm
+   =============================== */
+
+.page p {
+  margin: 0;
+}
+
+.page p + p {
+  margin-top: var(--para);
+}
+
+/* ===============================
+   Lists
+   =============================== */
+
+.page ul {
+  margin: 0.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page li {
+  margin: 0.65rem 0;
+}
+
+/* ===============================
+   Home helpers
+   =============================== */
+
+.deck {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.home-prose {
+  max-width: 58ch;
+}
+
+/* ===============================
+   Start Here
+   =============================== */
+
+.lede {
+  font-size: 1.05rem;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: 0.9rem 1.75rem;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--rule);
+}
+
+.kv dt {
+  font-weight: 600;
+  color: var(--text);
+  opacity: 0.75;
+}
+
+.kv dd {
+  margin: 0;
+}
+
+/* ===============================
+   Books catalog (mockup)
+   =============================== */
+
+.hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2rem 0;
+}
+
+.book-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.book-cover {
+  width: 140px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+.book-title {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui,
+    -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+
+.book-meta {
+  margin: 0.35rem 0 0.9rem;
+  color: var(--muted);
+}
+
+.book-link {
+  display: inline-block;
+  margin-top: 0.85rem;
+}
+
+/* =========================
+   Audio page (Expect Nothing)
+   ========================= */
+
+/* Keep Audio aligned with the rest of the site */
+.page.audio {
+  text-align: left;
+}
+
+/* Header aligns naturally with site; no extra top padding */
+.page.audio .audioHeader {
+  padding-top: 0;
+}
+
+/* Inline listen links with clean separators (no clustering) */
+.page.audio .audioLinks {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   color: var(--muted);
   font-size: 0.95rem;
 }
 
-.footer-links {
-  margin: 0;
-  .page > * + * {
-  margin-top: 1.25rem;
+/* Remove global underline for these links */
+.page.audio .audioLinks a {
+  border-bottom: 0;
+  padding-bottom: 0;
+  color: var(--muted);
 }
 
+/* Auto separators + spacing between links */
+.page.audio .audioLinks a + a::before {
+  content: "·";
+  opacity: 0.55;
+  margin: 0 0.75rem;
 }
+
+.page.audio .audioLinks a:hover {
+  color: var(--text);
+}
+
+/* Hero image spacing tuned */
+.page.audio .audioHero {
+  margin: 1.1rem 0 1.35rem;
+}
+
+.page.audio .audioSecondary {
+  margin: 1.9rem 0 1.1rem;
+}
+
+.about-signature {
+  margin-top: 0.5rem;   /* instead of 1rem */
+  margin-bottom: 0.75rem;
+
+}
+.about-signature img {
+  width: 160px;
+  height: auto;
+  display: block;
+}
+
+
+
+/* ===============================
+   Footer
+   =============================== */
+
+.site-footer {
+  max-width: var(--max);
+  margin: 1.75rem auto 2rem;
+  padding: 0 var(--pad-x);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.nav-links a.start-button {
+  border: 1px solid #d6d0c9;
+  border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid #d6d0c9; /* keep it consistent */
+}
+
+.nav-links a.start-button:hover {
+  border-color: #bfb9b2;
+  border-bottom-color: #bfb9b2;
+}
+.footer-signature {
+  margin-top: 0.75rem;
+}
+
+.footer-signature img {
+  width: 70px;
+  height: auto;
+  display: block;
+  
+  
+}
+/* Hide footer signature on About page only */
+body.is-about .site-footer .footer-signature {
+  display: none;
+}
+
+
 

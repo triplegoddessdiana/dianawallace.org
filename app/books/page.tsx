@@ -4,35 +4,60 @@ export const metadata = {
 
 export default function BooksPage() {
   return (
-    <main>
+    <>
       <h1>Books</h1>
 
-      <p>
-        The books are long-form work: cohesive, mythic, and designed to be lived with
-        over time.
-      </p>
+      <hr className="hr" />
 
-      <p>
-        They are not released as commentary on the moment. They belong to the same canon
-        as the essays and the audio work.
-      </p>
+      {/* Published */}
+      <section className="book-row">
+        <img
+          className="book-cover"
+          src="/covers/the-poet-who-forgot-her-name.jpg"
+          alt="Cover of The Poet Who Forgot Her Name by Diana Wallace"
+        />
 
-      <h2>Published</h2>
-      <ul>
-        <li>
-          <em>The Poet Who Forgot Her Name</em>
-        </li>
-      </ul>
+        <div>
+          <h2 className="book-title">The Poet Who Forgot Her Name</h2>
+          <p className="book-meta">Published</p>
 
-      <h2>Forthcoming</h2>
-      <ul>
-        <li>
-          <em>The Girl Who Grew Fangs</em>
-        </li>
-        <li>
-          <em>Year of the Fire Horse</em>
-        </li>
-      </ul>
-    </main>
+          <p>
+            A poetry collection in the Expect Nothing canon—memory, return, and
+            the conditions of becoming.
+          </p>
+
+          <p className="book-link">
+            <a
+              href="https://www.amazon.com/dp/YOUR-ASIN-HERE"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View on Amazon →
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <hr className="hr" />
+
+      {/* Forthcoming */}
+      <section className="book-row">
+        <img
+          className="book-cover"
+          src="/covers/the-girl-who-grew-fangs.jpg"
+          alt="Cover of The Girl Who Grew Fangs by Diana Wallace"
+        />
+
+        <div>
+          <h2 className="book-title">The Girl Who Grew Fangs</h2>
+          <p className="book-meta">Forthcoming</p>
+
+          <p>
+            A long-form poetic work—mythic, feral, and oriented toward
+            transformation.
+          </p>
+        </div>
+      </section>
+    </>
   );
 }

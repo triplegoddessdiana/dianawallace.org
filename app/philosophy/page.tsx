@@ -5,7 +5,8 @@ export const metadata = {
 export default function PhilosophyPage() {
   return (
     <main>
-      <h1>Philosophy</h1>
+      <h1 data-redundant="true">Philosophy</h1>
+
 
       <p>
         This site treats writing as a way of orienting attention, not as a method of
