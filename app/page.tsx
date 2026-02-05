@@ -7,6 +7,13 @@ export default function HomePage() {
     <>
       <h1 data-redundant="true">Diana Wallace</h1>
 
+      <figure className="home-image">
+        <img
+          src="/home/author-desk.webp"
+          alt="A quiet writing desk with books, papers, and a candle beneath a crescent moon"
+        />
+      </figure>
+
       <div className="prose">
         <p>
           A canonical archive of written, spoken, and declared work.
