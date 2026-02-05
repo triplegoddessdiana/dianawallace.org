@@ -21,7 +21,7 @@ export default function EssaysPage() {
 
 
       <p>
-        Essays here are intended to introduce frames — ways of seeing.
+        Essays here introduce frames — ways of seeing — through which questions become visible.
       </p>
 
       <p>
