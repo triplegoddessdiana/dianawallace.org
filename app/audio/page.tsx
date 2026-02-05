@@ -73,7 +73,6 @@ export default function AudioPage() {
       <section className="audioClosing">
         <p>
           These recordings are part of a larger body of work,
-          <br />
           but they can be entered without context.
         </p>
   
