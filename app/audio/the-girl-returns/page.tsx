@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function TheGirlReturnsPage() {
   return (
-    <main style={{ maxWidth: 720, margin: "0 auto", padding: "72px 20px" }}>
+    <main style={{ maxWidth: 720, margin: "0 auto", padding: "40px 20px 72px" }}>
       <header style={{ marginBottom: 28 }}>
         <h1 style={{ margin: 0 }}>The Girl Returns</h1>
         <p style={{ marginTop: 10, marginBottom: 0, opacity: 0.75 }}>
