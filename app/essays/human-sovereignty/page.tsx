@@ -153,13 +153,13 @@ export default function HumanSovereigntyPage() {
   </p>
 
   <p>
-    But something interior goes quiet — the small, sovereign pause where a human
+    But something interior goes dim — the sovereign pause where a human
     once asked: <em>Do I actually want this?</em>
   </p>
 
   <p>
     Over time, systems shape the future using the past. And the present moment —
-    the only place sovereignty can operate — is quietly bypassed.
+    the only place sovereignty can operate — is bypassed.
   </p>
 
   <p>
@@ -181,9 +181,9 @@ export default function HumanSovereigntyPage() {
   </p>
 
   <p>
-    Sovereignty is tested in ordinary moments, not dramatic ones. It appears in
+    Sovereignty is tested in ordinary moments. It appears in
     the space between impulse and response, when attention is offered something
-    and a choice is quietly made.
+    and a choice is made.
   </p>
 
   <p>
