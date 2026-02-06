@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 
 export default function TheGirlReturnsPage() {
   return (
-    <main style={{ maxWidth: 720, margin: "0 auto", padding: "40px 20px 72px" }}>
-      <header style={{ marginBottom: 28 }}>
-        <h1 style={{ margin: 0 }}>The Girl Returns</h1>
-        <p style={{ marginTop: 10, marginBottom: 0, opacity: 0.75 }}>
+    <main style={{ maxWidth: 720, margin: "0 auto", padding: "12px 20px 32px" }}>
+      <header style={{ marginBottom: 16 }}>
+        <h1 style={{ margin: 0, letterSpacing: "0.08em" }}>THE GIRL RETURNS</h1>
+        <p style={{ marginTop: 8, marginBottom: 0, opacity: 0.75 }}>
           Audio essay
         </p>
       </header>
 
-      <section style={{ marginBottom: 28 }}>
+      <section style={{ marginBottom: 14 }}>
         <p style={{ margin: 0, lineHeight: 1.65 }}>
           <em>The Girl Returns</em> is a short audio essay exploring memory,
           identity, and the act of returning to oneself. Written and performed
@@ -26,7 +26,7 @@ export default function TheGirlReturnsPage() {
         </p>
       </section>
 
-      <section style={{ marginBottom: 18 }}>
+      <section style={{ marginBottom: 12 }}>
         <nav style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
           <a
             href="https://open.spotify.com/episode/6ZcyQJtWLpos11woDdO4Fa?si=cqX0yjd3Shur1TndEzOKQA"
@@ -54,24 +54,28 @@ export default function TheGirlReturnsPage() {
         </nav>
       </section>
 
-      <section style={{ marginTop: 18 }}>
-  <div style={{ borderRadius: 12, overflow: "hidden" }}>
-    <iframe
-      title="The Girl Returns — Spotify video player"
-      src="https://open.spotify.com/embed/episode/6ZcyQJtWLpos11woDdO4Fa/video"
-      width="100%"
-      height="352"
-      frameBorder="0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"
-    />
-  </div>
-</section>
+      <section style={{ marginTop: 12 }}>
+        <div style={{ borderRadius: 12, overflow: "hidden" }}>
+          <iframe
+            title="The Girl Returns — Spotify video player"
+            src="https://open.spotify.com/embed/episode/6ZcyQJtWLpos11woDdO4Fa/video"
+            width="100%"
+            height="352"
+            frameBorder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
+        </div>
+      </section>
 
       {/* Optional: Transcript link (add when ready)
-      <section style={{ marginTop: 28 }}>
+      <section style={{ marginTop: 18 }}>
         <p style={{ margin: 0 }}>
-          <a href="/audio/the-girl-returns/transcript.pdf" target="_blank" rel="noreferrer">
+          <a
+            href="/audio/the-girl-returns/transcript.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
             Transcript (PDF)
           </a>
         </p>
