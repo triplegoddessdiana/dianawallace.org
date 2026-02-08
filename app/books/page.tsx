@@ -28,7 +28,7 @@ export default function BooksPage() {
 
           <p className="book-link">
             <a
-              href="https://www.amazon.com/Poet-Who-Forgot-Her-Name/dp/B0GDVZ1WMC/ref=sr_1_1?crid=1XNKV09VRAOVG&dib=eyJ2IjoiMSJ9.y8SMf2QN6boht7Ul0gxkIQ.g5cjPCAKYmR03T-pupj1xGTMHa6TmAhMhJMpm5NCxSw&dib_tag=se&keywords=the+poet+who+forgot+her+name&qid=1770585074&sprefix=%2Caps%2C194&sr=8-1"
+              href="https://a.co/d/0hMPmaNv"
               target="_blank"
               rel="noreferrer"
             >
