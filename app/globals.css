@@ -367,11 +367,6 @@ a:hover {
   height: auto !important;
 }
 
-.nmw-photo img {
-  width: 420px !important;
-  border: 3px solid red !important; /* TEMP debug so we can see it */
-}
-
 /* ===============================
    Footer
    =============================== */
