@@ -17,7 +17,7 @@ export default function NeedMoreWildlifePage() {
 
       <figure className="nmw-photo">
         <img
-          src="/need-more-wildlife/me-and-danny.jpeg"
+          src="/need-more-wildlife/me-and-danny.jpg"
           alt="Diana Wallace holding a rabbit"
         />
       </figure>

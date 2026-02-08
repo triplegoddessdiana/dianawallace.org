@@ -343,15 +343,17 @@ a:hover {
   height: auto;
   display: block;
 }
+
+/* Need More Wildlife */
 .nmw-photo {
   margin: 1.25rem 0 1.25rem;
 }
 
 .nmw-photo img {
+  display: block;
   width: 420px;
   max-width: 100%;
   height: auto;
-  display: block;
   border-radius: 6px;
 }
 
