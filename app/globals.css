@@ -397,5 +397,127 @@ body.is-about .site-footer .footer-signature {
   display: none;
 }
 
+/* ===============================
+   Book Page (dedicated)
+   =============================== */
+
+.book-page .hr {
+  display: none;
+}
+
+.book-page-top {
+  text-align: left;
+  margin-bottom: 3.5rem;
+}
+
+.book-page-cover {
+  margin: 0 0 1.5rem;
+}
+
+.book-page-top h1 {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui,
+    -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+
+.book-page-subtitle {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0.3rem 0 0;
+}
+
+.book-page-author {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin: 0.25rem 0 0;
+}
+
+.book-page-section {
+  margin-top: 3.5rem;
+}
+
+.book-page-parts {
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.book-page-parts li {
+  margin-bottom: 0.65rem;
+}
+
+.book-page-parts li:last-child {
+  margin-bottom: 0;
+}
+
+.book-page-excerpt {
+  margin: 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--rule);
+  color: var(--text);
+  font-style: italic;
+  line-height: 1.75;
+}
+
+.book-page-excerpt p {
+  margin: 0 0 1rem;
+}
+
+.book-page-excerpt p:last-child {
+  margin-bottom: 0;
+}
+
+.book-page-details {
+  margin: 0;
+}
+
+.book-page-details > div {
+  display: flex;
+  gap: 1rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.book-page-details > div:last-child {
+  border-bottom: none;
+}
+
+.book-page-details dt {
+  width: 6rem;
+  flex-shrink: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.book-page-details dd {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.book-page-recognition-intro {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem;
+}
+
+.book-page-awards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.book-page-awards li {
+  padding: 0.3rem 0;
+  color: var(--text);
+}
+
+.book-page-awards li::before {
+  content: none;
+}
+
 
 
