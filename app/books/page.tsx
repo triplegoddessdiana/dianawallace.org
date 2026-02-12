@@ -40,7 +40,7 @@ export default function BooksPage() {
 
           <p>
             A poetry collection in four movements — forgetting, searching,
-            remembering, returning. The first volume in the Expect Nothing canon.
+            remembering, returning.
           </p>
 
           <p className="book-link">
