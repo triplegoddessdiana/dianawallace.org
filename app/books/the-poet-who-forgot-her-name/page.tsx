@@ -110,7 +110,7 @@ export default function PoetPage() {
           </div>
           <div>
             <dt>ISBN</dt>
-            <dd>978-8-241-72353-6</dd>
+            <dd>979-8-241-72353-6</dd>
           </div>
           <div>
             <dt>Published</dt>
