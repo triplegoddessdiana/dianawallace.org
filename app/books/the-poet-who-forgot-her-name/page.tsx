@@ -134,6 +134,13 @@ export default function PoetPage() {
         </ul>
       </section>
 
+      {/* ── Reader Response ── */}
+      <section className="book-page-section">
+        <h2>Reader Response</h2>
+        <p>★★★★★ 5.0 — 8 reviews on Amazon</p>
+        <p>#1 New Release in Women's Poetry</p>
+      </section>
+
       {/* ── Purchase ── */}
       <section className="book-page-section">
         <h2>Get the Book</h2>
