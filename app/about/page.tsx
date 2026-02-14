@@ -30,6 +30,13 @@ export default function AboutPage() {
 
       <h1 data-redundant="true">About</h1>
 
+      <figure className="about-photo">
+        <img
+          src="/about/diana-wallace.jpg"
+          alt="Diana Wallace"
+        />
+      </figure>
+
       <figure className="about-signature">
         <img
           src="/about/diana-wallace-signature.png"
@@ -38,10 +45,10 @@ export default function AboutPage() {
       </figure>
 
       <div className="prose">
-        <p>I’m Diana Wallace.</p>
+        <p>I'm Diana Wallace.</p>
 
         <p>
-          I’m the author of <em>The Poet Who Forgot Her Name</em>.
+          I'm the author of <em>The Poet Who Forgot Her Name</em>.
         </p>
 
         <p>
