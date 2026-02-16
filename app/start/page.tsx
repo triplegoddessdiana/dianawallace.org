@@ -16,7 +16,7 @@ export default function StartHerePage() {
         <dl className="kv">
           <dt>Primary </dt>
           <dd>
-            <Link href="/essays/human-sovereignty">Human Sovereignty</Link>
+            <Link href="/essays/human-agency">Human Agency</Link>
           </dd>
 
           <dt>Axioms</dt>

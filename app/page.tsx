@@ -18,7 +18,7 @@ export default function HomePage() {
         <p>
           A canonical archive of written, spoken, and declared work.
           <br />
-          Oriented toward sovereign thought.
+          Oriented toward independent thought.
         </p>
 
         <p>

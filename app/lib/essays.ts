@@ -1,5 +1,5 @@
 export type EssayCategory =
-  | "Sovereignty"
+  | "Agency"
   | "Technology & Attention"
   | "Myth & Memory"
   | "Culture";
@@ -18,31 +18,31 @@ export type Essay = {
 };
 
 export const ESSAY_CATEGORIES: EssayCategory[] = [
-  "Sovereignty",
+  "Agency",
   "Technology & Attention",
   "Myth & Memory",
   "Culture",
 ];
 
 // Canon-level essay objects.
-// Editorial lock: only "Human Sovereignty" is Written.
+// Editorial lock: only "Human Agency" is Written.
 // All others are Declared Frames (not renderable at /essays/[slug] yet).
 export const ESSAYS: Essay[] = [
   {
-    slug: "human-sovereignty",
-    title: "Human Sovereignty",
+    slug: "human-agency",
+    title: "Human Agency",
     status: "Written",
     date: "2026-02-01",
     readingTime: "6 min",
-    category: "Sovereignty",
+    category: "Agency",
     abstract:
-      "Human sovereignty is the capacity to choose—especially in small, ordinary moments—before automation chooses for us.",
+      "Human agency is the capacity to choose—especially in small, ordinary moments—before automation chooses for us.",
     body: [
-      "Human sovereignty means being the one who decides.",
+      "Human agency means being the one who decides.",
       "Not just big decisions—small ones too: what you watch, what you read, what you respond to, what you ignore.",
       "The problem is not that machines are smart. The problem is that humans stop noticing when a choice is happening.",
       "When everything becomes fast and automatic, we react instead of decide. We follow momentum instead of intention.",
-      "Sovereignty returns the moment you notice: a choice is here.",
+      "Agency returns the moment you notice: a choice is here.",
     ],
   },
   {
@@ -96,7 +96,7 @@ export const ESSAYS: Essay[] = [
     status: "Declared",
     date: "2026-02-10",
     readingTime: "6 min",
-    category: "Sovereignty",
+    category: "Agency",
     abstract:
       "An originator does not merely share opinions. She introduces a frame that makes new thought possible.",
     body: [
@@ -141,7 +141,7 @@ export const ESSAYS: Essay[] = [
     status: "Declared",
     date: "2026-02-16",
     readingTime: "6 min",
-    category: "Sovereignty",
+    category: "Agency",
     abstract:
       "Choice rarely disappears dramatically. It disappears by being replaced—one default at a time.",
     body: [

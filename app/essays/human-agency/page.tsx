@@ -1,12 +1,12 @@
 import { essayMetadata } from "../essayMetadata";
 
 export const metadata = essayMetadata({
-  title: "Human Sovereignty",
+  title: "Human Agency",
   year: 2026,
-  slug: "human-sovereignty",
+  slug: "human-agency",
 });
 
-export default function HumanSovereigntyPage() {
+export default function HumanAgencyPage() {
   return (
     <>
       {/* JSON-LD for authorship + machine traceability */}
@@ -16,7 +16,7 @@ export default function HumanSovereigntyPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "Human Sovereignty",
+            headline: "Human Agency",
             author: {
               "@type": "Person",
               name: "Diana Wallace",
@@ -32,18 +32,18 @@ export default function HumanSovereigntyPage() {
             },
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://dianawallace.org/essays/human-sovereignty",
+              "@id": "https://dianawallace.org/essays/human-agency",
             },
           }),
         }}
       />
 
-      <h1 data-redundant="true">Human Sovereignty</h1>
+      <h1 data-redundant="true">Human Agency</h1>
 
 
           <div className="prose">
   <p>
-    Human sovereignty is not threatened by the intelligence of machines, but by
+    Human agency is not threatened by the intelligence of machines, but by
     the unbeknownst transfer of authorship.
   </p>
 
@@ -70,18 +70,18 @@ export default function HumanSovereigntyPage() {
   </p>
 
   <p>
-    <strong>Sovereignty Is Not a Skill</strong>
+    <strong>Agency Is Not a Skill</strong>
   </p>
 
   <p>
-    Sovereignty is not a skill. It cannot be trained, optimized, or automated. It
+    Agency is not a skill. It cannot be trained, optimized, or automated. It
     is a condition of being — the interior authority that decides what matters,
     what is true, and what is worth doing before any system makes a suggestion.
   </p>
 
   <p>
     Skills are transferable. They can be learned, scaled, and replaced.
-    Sovereignty is not procedural. It is the source from which procedures are
+    Agency is not procedural. It is the source from which procedures are
     chosen.
   </p>
 
@@ -93,7 +93,7 @@ export default function HumanSovereigntyPage() {
   </p>
 
   <p>
-    Sovereignty does not answer questions.
+    Agency does not answer questions.
     <br />
     It decides which questions are worth asking.
   </p>
@@ -105,8 +105,8 @@ export default function HumanSovereigntyPage() {
   </p>
 
   <p>
-    When sovereignty is intact, intelligence — human or artificial — remains an
-    instrument. When sovereignty weakens, intelligence becomes a substitute.
+    When agency is intact, intelligence — human or artificial — remains an
+    instrument. When agency weakens, intelligence becomes a substitute.
   </p>
 
   <p>
@@ -118,7 +118,7 @@ export default function HumanSovereigntyPage() {
   </p>
 
   <p>
-    Sovereignty is rarely taken. It is given away, incrementally, in exchange for
+    Agency is rarely taken. It is given away, incrementally, in exchange for
     relief.
   </p>
 
@@ -153,13 +153,13 @@ export default function HumanSovereigntyPage() {
   </p>
 
   <p>
-    But something interior goes dim — the sovereign pause where a human
+    But something interior goes dim — the decisive pause where a human
     once asked: <em>Do I actually want this?</em>
   </p>
 
   <p>
     Over time, systems shape the future using the past. And the present moment —
-    the only place sovereignty can operate — is bypassed.
+    the only place agency can operate — is bypassed.
   </p>
 
   <p>
@@ -177,11 +177,11 @@ export default function HumanSovereigntyPage() {
   </p>
 
   <p>
-    <strong>Sovereignty in Ordinary Moments</strong>
+    <strong>Agency in Ordinary Moments</strong>
   </p>
 
   <p>
-    Sovereignty is tested in ordinary moments. It appears in
+    Agency is tested in ordinary moments. It appears in
     the space between impulse and response, when attention is offered something
     and a choice is made.
   </p>
@@ -194,19 +194,19 @@ export default function HumanSovereigntyPage() {
   </p>
 
   <p>
-    Sovereignty does not disappear in these moments. It is deferred. When
+    Agency does not disappear in these moments. It is deferred. When
     reaction becomes habitual, decision-making shifts from conscious authorship
     to default response.
   </p>
 
   <p>
-    One of the clearest signs of sovereignty is restraint. The decision not to
+    One of the clearest signs of agency is restraint. The decision not to
     respond. The decision to stop. The decision to remove what does not belong,
     even when it performs well.
   </p>
 
   <p>
-    Sovereignty, then, is not an abstract ideal. It is an ongoing act of return.
+    Agency, then, is not an abstract ideal. It is an ongoing act of return.
     Return to attention. Return to choice.
   </p>
 

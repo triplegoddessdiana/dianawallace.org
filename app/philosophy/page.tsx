@@ -17,7 +17,7 @@ export default function PhilosophyPage() {
       <h2>Axioms</h2>
 
       <p>
-        <strong>Human sovereignty precedes systems.</strong>
+        <strong>Human agency precedes systems.</strong>
         <br />
         No system, platform, or process is assumed to be morally neutral.
       </p>

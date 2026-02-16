@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s · Diana Wallace",
   },
   description:
-    "Essays, books, and audio by Diana Wallace on human sovereignty, memory, and meaning in an automated world.",
+    "Essays, books, and audio by Diana Wallace on human agency, memory, and meaning in an automated world.",
 };
 
 export default function RootLayout({
