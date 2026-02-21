@@ -127,7 +127,7 @@ export default function FangsPage() {
         <p>Paperback $16.99&ensp;·&ensp;eBook $9.99</p>
         <p>
           <a
-            href="https://www.amazon.com/dp/9798994577424"
+            href="https://www.amazon.com/dp/B0GP1N2ZCF"
             target="_blank"
             rel="noreferrer"
           >
