@@ -59,15 +59,8 @@ export default function HumanAgencyPage() {
 
   <p>
     What was once chosen becomes default.
-    <br />
     What was once deliberate becomes automatic.
-  </p>
-
-  <p>
-    The question is not whether machines think.
-    <br />
-    It is whether humans retain authority over choice itself — or unknowingly
-    surrender it to systems that decide by default.
+    And the person at the center of the life stops being the one steering it.
   </p>
 
   <p>
@@ -81,33 +74,16 @@ export default function HumanAgencyPage() {
   </p>
 
   <p>
-    Skills are transferable. They can be learned, scaled, and replaced.
-    Agency is not procedural. It is the source from which procedures are
-    chosen.
-  </p>
-
-  <p>The language of intelligence is insufficient.</p>
-
-  <p>
     Intelligence can be measured, benchmarked, accelerated, and eventually
-    surpassed. That is precisely why it is so easy to automate.
+    surpassed. That is precisely why it is so easy to automate. Agency cannot
+    be surpassed because it is not a performance. It is the source from which
+    all performances are chosen.
   </p>
 
   <p>
-    Agency does not answer questions.
-    <br />
-    It decides which questions are worth asking.
-  </p>
-
-  <p>
-    It does not optimize outcomes.
-    <br />
-    It decides what outcomes mean.
-  </p>
-
-  <p>
-    When agency is intact, intelligence — human or artificial — remains an
-    instrument. When agency weakens, intelligence becomes a substitute.
+    Agency decides which questions are worth asking. It decides what outcomes
+    mean. When agency is intact, intelligence — human or artificial — remains
+    an instrument. When agency weakens, intelligence becomes a substitute.
   </p>
 
   <p>
@@ -124,20 +100,9 @@ export default function HumanAgencyPage() {
   </p>
 
   <p>
-    A recommendation here.
-    <br />
-    An automation there.
-    <br />
-    A system that finishes a sentence, selects a path, or surfaces an answer
-    before the question has fully formed.
-  </p>
-
-  <p>
-    Each intervention saves time.
-    <br />
-    Each feels like progress.
-    <br />
-    None announce themselves as a loss.
+    A recommendation here. An automation there. A system that finishes a
+    sentence, selects a path, or surfaces an answer before the question has
+    fully formed.
   </p>
 
   <p>
@@ -150,12 +115,8 @@ export default function HumanAgencyPage() {
 
   <p>
     Nothing breaks. Productivity improves. Output increases. Friction
-    disappears.
-  </p>
-
-  <p>
-    But something interior goes dim — the decisive pause where a human
-    once asked: <em>Do I actually want this?</em>
+    disappears. But something interior goes dim — the decisive pause where a
+    human once asked: <em>Do I actually want this?</em>
   </p>
 
   <p>
@@ -164,51 +125,34 @@ export default function HumanAgencyPage() {
   </p>
 
   <p>
-    This is how authorship thins.
-    <br />
-    Not because humans stop creating,
-    <br />
-    but because they stop originating.
+    This is how authorship thins. Humans do not stop creating. They stop
+    originating. Nothing has gone wrong. And that is precisely the problem.
   </p>
 
   <p>
-    Nothing has gone wrong.
-    <br />
-    And that is precisely the problem.
+    <strong>The Moment You Can Feel</strong>
   </p>
 
   <p>
-    <strong>Agency in Ordinary Moments</strong>
+    You pick up your phone. You did not decide to pick it up. Your hand was
+    already moving before the thought formed. You are looking at something now —
+    a feed, a notification, a thread — and if someone asked you why, you would
+    not have an answer. You did not choose this. Something chose it for you, and
+    your hand cooperated.
   </p>
 
   <p>
-    Agency is tested in ordinary moments. It appears in
-    the space between impulse and response, when attention is offered something
-    and a choice is made.
+    This is where agency lives and dies. In the ordinary moment. The space
+    between impulse and response, when attention is offered something and a
+    choice either happens or doesn&rsquo;t.
   </p>
 
   <p>
-    Modern systems are built to remove friction. They anticipate preferences,
-    surface content, and guide response. This efficiency is not inherently
-    harmful. But over time, it changes the conditions under which decisions are
-    made.
-  </p>
-
-  <p>
-    Agency does not disappear in these moments. It is deferred. When
-    reaction becomes habitual, decision-making shifts from conscious authorship
-    to default response.
-  </p>
-
-  <p>
-    One of the clearest signs of agency is restraint. The decision not to
-    respond. The decision to stop. The decision to remove what does not belong,
-    even when it performs well.
-  </p>
-
-  <p>
-    Agency, then, is not an abstract ideal. It is an ongoing act of return.
-    Return to attention. Return to choice.
+    One of the clearest signs of agency is restraint. The decision to put the
+    phone down. The decision to stop. The decision to remove what does not
+    belong, even when it performs well. Agency is not an abstract ideal. It is
+    the act of catching yourself mid-motion and asking whether the motion is
+    yours.
   </p>
 
   <p>
@@ -222,25 +166,19 @@ export default function HumanAgencyPage() {
 
   <p>
     A machine can present outcomes. It can simulate consequences. It can predict
-    preferences based on prior behavior.
-  </p>
-
-  <p>
-    What it cannot do is stand inside the moment of consequence.
+    preferences based on prior behavior. What it cannot do is stand inside the
+    moment of consequence.
   </p>
 
   <p>
     Responsibility is not a computation. It is an interior weight — the
-    knowledge that this choice will belong to you.
+    knowledge that this choice will belong to you. This is the line machines
+    cannot enter. Not because they are insufficiently advanced, but because they
+    are not alive.
   </p>
 
   <p>
-    This is the line machines cannot enter. Not because they are insufficiently
-    advanced, but because they are not alive.
-  </p>
-
-  <p>
-    <strong>Remembering What Was Never Lost</strong>
+    <strong>What Remains</strong>
   </p>
 
   <p>
@@ -249,8 +187,15 @@ export default function HumanAgencyPage() {
   </p>
 
   <p>
-    This is not a battle to be won, but a focus to be restored. The moment it is
-    recognized, it is already possible again.
+    And forgetting is the wrong word. It implies the knowledge was once held
+    and then lost. The truth is quieter than that. The knowledge is still
+    there. It just stopped being used. The muscle is intact. It has simply
+    been still for so long that the body forgot it could move.
+  </p>
+
+  <p>
+    Agency does not need to be restored. It needs to be exercised. And the
+    exercise is small. It is the next choice you make on purpose.
   </p>
 
   <p>— Diana Wallace</p>
