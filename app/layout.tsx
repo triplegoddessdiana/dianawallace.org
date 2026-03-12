@@ -129,6 +129,12 @@ export default function RootLayout({
           <p className="footer-links">
             <span>© {new Date().getFullYear()} Diana Wallace</span>
             <span aria-hidden="true"> · </span>
+            <a href="/books">Books</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/essays">Essays</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/audio">Audio</a>
+            <span aria-hidden="true"> · </span>
             <a href="/privacy">Privacy</a>
             <span aria-hidden="true"> · </span>
             <a href="/press">Press</a>

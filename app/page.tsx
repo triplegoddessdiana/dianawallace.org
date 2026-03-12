@@ -19,13 +19,19 @@ export default function HomePage() {
 
       <div className="prose">
         <p>
-          A canonical archive of written, spoken, and declared work.
+          Poet, author, essayist.
           <br />
           Oriented toward independent thought.
         </p>
 
         <p>
-          <a href="/start">Start here</a>
+          Author of <a href="/books">The Forgetting trilogy</a>.
+          <br />
+          Host of <a href="/audio">Expect Nothing</a>.
+        </p>
+
+        <p>
+          <a href="/start">Start here →</a>
         </p>
       </div>
     </>
