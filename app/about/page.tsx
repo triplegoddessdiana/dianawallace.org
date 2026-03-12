@@ -68,6 +68,14 @@ export default function AboutPage() {
           on the relationship between humans and non-human life. That work
           remains collected as <a href="/need-more-wildlife">Need More Wildlife</a>.
         </p>
+
+        <p>
+          I am also the founder of{" "}
+          <a href="https://aliholly.com" target="_blank" rel="noopener noreferrer">
+            Aliholly
+          </a>
+          , the first streaming platform for AI-generated cinema and music.
+        </p>
       </div>
     </main>
   );

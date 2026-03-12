@@ -12,8 +12,8 @@ export default function ContactPage() {
       <p>
         For correspondence regarding the work:
         <br />
-        <a href="mailto:contact@dianawallace.org">
-          contact@dianawallace.org
+        <a href="mailto:diana@aliholly.com">
+          diana@aliholly.com
         </a>
       </p>
     </>
