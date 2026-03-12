@@ -1,5 +1,8 @@
 export const metadata = {
-  title: "Diana Wallace",
+  title: "Diana Wallace — Poet, Author, Essayist",
+  description:
+    "Diana Wallace is the author of The Forgetting trilogy — poetry books on forgetting, remembering, and returning. Host of the Expect Nothing podcast. Essays on human agency and meaning.",
+  alternates: { canonical: "/" },
 };
 
 export default function HomePage() {

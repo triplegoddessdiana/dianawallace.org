@@ -3,6 +3,9 @@ import { getWrittenEssays, getDeclaredFrames } from "@/app/lib/essays";
 
 export const metadata = {
   title: "Essays",
+  description:
+    "Essays by Diana Wallace on human agency, attention, memory, and meaning. Frames for seeing — written and declared.",
+  alternates: { canonical: "/essays" },
 };
 
 // Declared primary (not yet written). Keep this as a title match for now.

@@ -2,9 +2,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The Girl Returns — Diana Wallace",
+  title: "The Girl Returns — Audio Essay",
   description:
-    "The Girl Returns is a short audio essay exploring memory, identity, and the act of returning to oneself.",
+    "The Girl Returns is a short audio essay by Diana Wallace exploring memory, identity, and the act of returning to oneself. Part of the Expect Nothing podcast.",
+  alternates: { canonical: "/audio/the-girl-returns" },
 };
 
 export default function TheGirlReturnsPage() {

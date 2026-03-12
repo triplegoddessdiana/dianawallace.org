@@ -1,5 +1,7 @@
 export const metadata = {
   title: "Contact",
+  description: "Contact Diana Wallace for correspondence regarding the work.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

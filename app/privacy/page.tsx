@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Privacy",
+  description: "Privacy policy for dianawallace.org.",
+  alternates: { canonical: "/privacy" },
+};
+
 export default function PrivacyPage() {
   return (
     <>

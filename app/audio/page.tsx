@@ -1,16 +1,50 @@
 // app/audio/page.tsx
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Audio — Diana Wallace",
-  description: "Expect Nothing — spoken pieces meant to be listened to, not skimmed.",
+  title: "Expect Nothing Podcast — Audio by Diana Wallace",
+  description:
+    "Expect Nothing — spoken pieces by Diana Wallace meant to be listened to, not skimmed. The audio companion to The Forgetting trilogy.",
   alternates: { canonical: "/audio" },
+  openGraph: {
+    title: "Expect Nothing Podcast · Diana Wallace",
+    description:
+      "Spoken pieces meant to be listened to, not skimmed. The audio companion to The Forgetting trilogy.",
+  },
 };
 
 export default function AudioPage() {
   return (
     <main className="page audio">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "PodcastSeries",
+            name: "Expect Nothing",
+            description: "Spoken pieces meant to be listened to, not skimmed.",
+            url: "https://dianawallace.org/audio",
+            author: { "@type": "Person", name: "Diana Wallace" },
+            webFeed: "https://open.spotify.com/show/22TxQiPHN1gAjE4ovhQjbk",
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://dianawallace.org" },
+              { "@type": "ListItem", position: 2, name: "Audio", item: "https://dianawallace.org/audio" },
+            ],
+          }),
+        }}
+      />
       <header className="pageHeader audioHeader">
         <h1 className="pageTitle">Expect Nothing</h1>
 
@@ -80,6 +114,15 @@ export default function AudioPage() {
           You only need to be here long enough
           <br />
          for something to wake up—or go deeper.
+        </p>
+      </section>
+
+      <section className="audioClosing">
+        <p>
+          <Link href="/books">Explore The Forgetting trilogy →</Link>
+        </p>
+        <p>
+          <Link href="/essays/human-agency">Read: Human Agency →</Link>
         </p>
       </section>
     </main>

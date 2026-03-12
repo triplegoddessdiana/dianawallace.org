@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { essayMetadata } from "../essayMetadata";
 
 export const metadata = essayMetadata({
@@ -253,6 +254,15 @@ export default function HumanAgencyPage() {
   </p>
 
   <p>— Diana Wallace</p>
+
+  <hr style={{ margin: "2rem 0", opacity: 0.2 }} />
+
+  <p>
+    <Link href="/books">Read The Forgetting trilogy →</Link>
+  </p>
+  <p>
+    <Link href="/audio">Listen: Expect Nothing podcast →</Link>
+  </p>
 </div>
 
 

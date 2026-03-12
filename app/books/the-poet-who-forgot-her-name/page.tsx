@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "The Poet Who Forgot Her Name",
+  title: "The Poet Who Forgot Her Name — Book I of The Forgetting Trilogy",
   description:
-    "A poetry collection in four movements by Diana Wallace — forgetting, searching, remembering, returning. Poems for the Returning Self.",
+    "Poems for the Returning Self by Diana Wallace. A poetry collection in four movements — forgetting, searching, remembering, returning. Book I of The Forgetting trilogy.",
+  alternates: { canonical: "/books/the-poet-who-forgot-her-name" },
   openGraph: {
     title: "The Poet Who Forgot Her Name · Diana Wallace",
     description:
-      "Poems for the Returning Self. A collection in four movements — forgetting, searching, remembering, returning.",
+      "Poems for the Returning Self. A collection in four movements — forgetting, searching, remembering, returning. Book I of The Forgetting trilogy by Diana Wallace.",
     images: ["/covers/the-poet-who-forgot-her-name.jpg"],
   },
 };
@@ -16,6 +18,41 @@ export const metadata: Metadata = {
 export default function PoetPage() {
   return (
     <article className="book-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Book",
+            name: "The Poet Who Forgot Her Name",
+            author: { "@type": "Person", name: "Diana Wallace" },
+            bookFormat: "Paperback",
+            isbn: "9798241723536",
+            numberOfPages: 216,
+            datePublished: "2025",
+            description:
+              "Poems for the Returning Self. A collection in four movements — forgetting, searching, remembering, returning.",
+            genre: "Poetry",
+            inLanguage: "en",
+            publisher: "Independent",
+            image: "https://dianawallace.org/covers/the-poet-who-forgot-her-name.jpg",
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://dianawallace.org" },
+              { "@type": "ListItem", position: 2, name: "Books", item: "https://dianawallace.org/books" },
+              { "@type": "ListItem", position: 3, name: "The Poet Who Forgot Her Name", item: "https://dianawallace.org/books/the-poet-who-forgot-her-name" },
+            ],
+          }),
+        }}
+      />
       {/* ── Cover + Title ── */}
       <header className="book-page-top">
         <figure className="book-page-cover">
@@ -152,6 +189,21 @@ export default function PoetPage() {
           >
             Amazon →
           </a>
+        </p>
+      </section>
+
+      {/* ── Continue the Trilogy ── */}
+      <section className="book-page-section">
+        <h2>Continue the Trilogy</h2>
+        <p>
+          <Link href="/books/the-girl-who-grew-fangs">
+            Read Book II: The Girl Who Grew Fangs →
+          </Link>
+        </p>
+        <p>
+          <Link href="/audio">
+            Listen: Expect Nothing podcast →
+          </Link>
         </p>
       </section>
     </article>

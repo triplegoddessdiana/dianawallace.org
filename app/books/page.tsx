@@ -2,7 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Books",
+  title: "Books — The Forgetting Trilogy",
+  description:
+    "Poetry books by Diana Wallace. The Forgetting trilogy: The Poet Who Forgot Her Name (2025) and The Girl Who Grew Fangs (2026). Poems about forgetting, remembering, and returning.",
+  alternates: { canonical: "/books" },
 };
 
 export default function BooksPage() {

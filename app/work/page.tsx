@@ -1,5 +1,8 @@
 export const metadata = {
   title: "The Work",
+  description:
+    "A single body of work by Diana Wallace — essays, poetry, philosophical texts, and audio. Organized by coherence, not chronology.",
+  alternates: { canonical: "/work" },
 };
 
 export default function WorkPage() {

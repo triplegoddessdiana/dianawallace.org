@@ -1,5 +1,7 @@
 export const metadata = {
-  title: "About",
+  title: "About Diana Wallace — Poet and Author",
+  description:
+    "Diana Wallace is the author of The Forgetting trilogy — The Poet Who Forgot Her Name and The Girl Who Grew Fangs — and host of the Expect Nothing podcast.",
   alternates: { canonical: "/about" },
 };
 
@@ -48,7 +50,17 @@ export default function AboutPage() {
         <p>I'm Diana Wallace.</p>
 
         <p>
-          I'm the author of <em>The Poet Who Forgot Her Name</em>.
+          I&apos;m the author of{" "}
+          <a href="/books/the-poet-who-forgot-her-name">
+            <em>The Poet Who Forgot Her Name</em>
+          </a>{" "}
+          and{" "}
+          <a href="/books/the-girl-who-grew-fangs">
+            <em>The Girl Who Grew Fangs</em>
+          </a>
+          , the first two books of{" "}
+          <a href="/books">The Forgetting trilogy</a>. I also host the{" "}
+          <a href="/audio">Expect Nothing</a> podcast.
         </p>
 
         <p>

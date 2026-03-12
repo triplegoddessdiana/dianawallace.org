@@ -1,5 +1,8 @@
 export const metadata = {
-  title: "Philosophy",
+  title: "Philosophy — Axioms",
+  description:
+    "The axioms that define the conceptual boundaries of Diana Wallace's work. Human agency precedes systems. Attention is a moral act. Work is an object, not a post.",
+  alternates: { canonical: "/philosophy" },
 };
 
 export default function PhilosophyPage() {

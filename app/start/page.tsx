@@ -1,6 +1,11 @@
 import Link from "next/link";
 
-export const metadata = { title: "Start Here" };
+export const metadata = {
+  title: "Start Here",
+  description:
+    "New to Diana Wallace's work? Start here. A guide to the essays, books, audio, and philosophy on this site.",
+  alternates: { canonical: "/start" },
+};
 
 export default function StartHerePage() {
   return (

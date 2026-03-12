@@ -17,11 +17,37 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://dianawallace.org"),
   title: {
-    default: "Diana Wallace",
+    default: "Diana Wallace — Poet, Author, Essayist",
     template: "%s · Diana Wallace",
   },
   description:
-    "Essays, books, and audio by Diana Wallace on human agency, memory, and meaning in an automated world.",
+    "Diana Wallace is the author of The Forgetting trilogy and host of the Expect Nothing podcast. Essays, poetry books, and audio on human agency, memory, and meaning in an automated world.",
+  keywords: [
+    "Diana Wallace",
+    "Diana Wallace poet",
+    "Diana Wallace author",
+    "Diana Wallace books",
+    "The Forgetting trilogy",
+    "Expect Nothing podcast",
+    "human agency",
+    "poetry",
+    "poems about forgetting",
+    "poems about returning",
+  ],
+  alternates: { canonical: "/" },
+  twitter: {
+    card: "summary_large_image",
+    site: "@DianaWallace888",
+    creator: "@DianaWallace888",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Diana Wallace",
+    title: "Diana Wallace — Poet, Author, Essayist",
+    description:
+      "Author of The Forgetting trilogy. Essays, poetry books, and audio on human agency, memory, and meaning.",
+  },
 };
 
 export default function RootLayout({
@@ -31,6 +57,49 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Diana Wallace",
+              url: "https://dianawallace.org",
+              sameAs: [
+                "https://x.com/DianaWallace888",
+                "https://www.amazon.com/stores/Diana-Wallace/author/B0DQ1LGG1K",
+              ],
+              jobTitle: "Author",
+              description:
+                "Poet and author of The Forgetting trilogy. Host of the Expect Nothing podcast.",
+              knowsAbout: [
+                "Poetry",
+                "Human Agency",
+                "Philosophy",
+                "Creative Writing",
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Diana Wallace",
+              url: "https://dianawallace.org",
+              description:
+                "Essays, books, and audio by Diana Wallace on human agency, memory, and meaning in an automated world.",
+              author: {
+                "@type": "Person",
+                name: "Diana Wallace",
+              },
+            }),
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <BodyClass />
 

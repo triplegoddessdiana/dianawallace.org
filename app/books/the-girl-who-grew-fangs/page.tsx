@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "The Girl Who Grew Fangs",
+  title: "The Girl Who Grew Fangs — Book II of The Forgetting Trilogy",
   description:
-    "A Book of Remembering After the Fall Into Shadow — 53 poems in four parts by Diana Wallace. Book II of The Forgetting trilogy.",
+    "A Book of Remembering After the Fall Into Shadow — 53 poems in four parts by Diana Wallace. Book II of The Forgetting trilogy. The soul, like the wolf, does not forget its own nature.",
+  alternates: { canonical: "/books/the-girl-who-grew-fangs" },
   openGraph: {
     title: "The Girl Who Grew Fangs · Diana Wallace",
     description:
-      "But the soul, like the wolf, does not forget its own nature. Book II of The Forgetting trilogy.",
+      "But the soul, like the wolf, does not forget its own nature. Book II of The Forgetting trilogy by Diana Wallace.",
     images: ["/covers/the-girl-who-grew-fangs.jpg"],
   },
 };
@@ -16,6 +18,40 @@ export const metadata: Metadata = {
 export default function FangsPage() {
   return (
     <article className="book-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Book",
+            name: "The Girl Who Grew Fangs: A Book of Remembering After the Fall Into Shadow",
+            author: { "@type": "Person", name: "Diana Wallace" },
+            bookFormat: "Paperback",
+            isbn: "9798994577424",
+            datePublished: "2026-02-17",
+            description:
+              "53 poems in four parts. Book II of The Forgetting trilogy. But the soul, like the wolf, does not forget its own nature.",
+            genre: "Poetry",
+            numberOfPages: 175,
+            inLanguage: "en",
+            image: "https://dianawallace.org/covers/the-girl-who-grew-fangs.jpg",
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://dianawallace.org" },
+              { "@type": "ListItem", position: 2, name: "Books", item: "https://dianawallace.org/books" },
+              { "@type": "ListItem", position: 3, name: "The Girl Who Grew Fangs", item: "https://dianawallace.org/books/the-girl-who-grew-fangs" },
+            ],
+          }),
+        }}
+      />
       {/* ── Cover + Title ── */}
       <header className="book-page-top">
         <figure className="book-page-cover">
@@ -133,6 +169,21 @@ export default function FangsPage() {
           >
             Amazon →
           </a>
+        </p>
+      </section>
+
+      {/* ── The Trilogy ── */}
+      <section className="book-page-section">
+        <h2>The Forgetting Trilogy</h2>
+        <p>
+          <Link href="/books/the-poet-who-forgot-her-name">
+            Read Book I: The Poet Who Forgot Her Name →
+          </Link>
+        </p>
+        <p>
+          <Link href="/audio">
+            Listen: Expect Nothing podcast →
+          </Link>
         </p>
       </section>
     </article>
