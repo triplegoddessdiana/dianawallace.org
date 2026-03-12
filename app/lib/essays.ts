@@ -48,7 +48,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "the-cost-of-convenience",
     title: "The Cost of Convenience",
-    status: "Declared",
+    status: "Written",
     date: "2026-02-03",
     readingTime: "7 min",
     category: "Technology & Attention",
@@ -63,7 +63,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "attention-is-a-moral-act",
     title: "Attention Is a Moral Act",
-    status: "Declared",
+    status: "Written",
     date: "2026-02-06",
     readingTime: "5 min",
     category: "Technology & Attention",
@@ -78,7 +78,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "objects-not-posts",
     title: "Objects, Not Posts",
-    status: "Declared",
+    status: "Written",
     date: "2026-02-08",
     readingTime: "4 min",
     category: "Culture",
@@ -93,7 +93,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "originators-introduce-frames",
     title: "Originators Introduce Frames",
-    status: "Declared",
+    status: "Written",
     date: "2026-02-10",
     readingTime: "6 min",
     category: "Agency",
@@ -108,7 +108,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "remembrance-is-orientation",
     title: "Remembrance Is Orientation",
-    status: "Declared",
+    status: "Written",
     date: "2026-02-12",
     readingTime: "5 min",
     category: "Myth & Memory",
@@ -123,7 +123,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "the-automation-of-speech",
     title: "The Automation of Speech",
-    status: "Declared",
+    status: "Written",
     date: "2026-02-14",
     readingTime: "7 min",
     category: "Technology & Attention",
@@ -138,7 +138,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "choice-without-force",
     title: "Choice Without Force",
-    status: "Declared",
+    status: "Written",
     date: "2026-02-16",
     readingTime: "6 min",
     category: "Agency",
@@ -153,7 +153,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "myth-is-a-technology-of-meaning",
     title: "Myth Is a Technology of Meaning",
-    status: "Declared",
+    status: "Written",
     date: "2026-02-18",
     readingTime: "6 min",
     category: "Myth & Memory",
@@ -168,7 +168,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "silence-as-signal",
     title: "Silence as Signal",
-    status: "Declared",
+    status: "Written",
     date: "2026-02-20",
     readingTime: "4 min",
     category: "Myth & Memory",
@@ -183,7 +183,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "the-citeable-life",
     title: "The Citeable Life",
-    status: "Declared",
+    status: "Written",
     date: "2026-02-22",
     readingTime: "5 min",
     category: "Culture",
@@ -198,7 +198,7 @@ export const ESSAYS: Essay[] = [
   {
     slug: "glow-anyway",
     title: "Glow Anyway",
-    status: "Declared",
+    status: "Written",
     date: "2026-02-24",
     readingTime: "3 min",
     category: "Myth & Memory",
