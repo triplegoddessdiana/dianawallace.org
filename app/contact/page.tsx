@@ -13,14 +13,16 @@ export default function ContactPage() {
       <p>
         For correspondence regarding the work, write Diana Wallace, poet:
         <br />
-        <a href="mailto:diana@aliholly.com">
-          diana@aliholly.com
+        <a href="mailto:dianawallacepoet@gmail.com">
+          dianawallacepoet@gmail.com
         </a>
       </p>
 
       <p>
         For a reading or bookstore evening, write Diana Wallace, poet, at{" "}
-        <a href="mailto:diana@aliholly.com">diana@aliholly.com</a>.
+        <a href="mailto:dianawallacepoet@gmail.com">
+          dianawallacepoet@gmail.com
+        </a>.
       </p>
     </>
   );
