@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Diana Wallace — Poet, Author, Essayist",
   description:
-    "Diana Wallace is the author of The Forgetting trilogy — poetry books on forgetting, remembering, and returning. Host of the Expect Nothing podcast. Essays on human agency and meaning.",
+    "Diana Wallace, poet. Author of The Forgetting trilogy — The Poet Who Forgot Her Name and The Girl Who Grew Fangs. Poetry books on forgetting, remembering, and returning.",
   alternates: { canonical: "/" },
 };
 
@@ -19,18 +19,44 @@ export default function HomePage() {
 
       <div className="prose">
         <p>
-          Poet, author, essayist.
+          Diana Wallace, poet.
           <br />
-          Oriented toward independent thought.
+          Author of <a href="/books">The Forgetting trilogy</a>.
         </p>
 
         <p>
-          Author of <a href="/books">The Forgetting trilogy</a>.
+          <a href="/books/the-poet-who-forgot-her-name">
+            <em>The Poet Who Forgot Her Name</em>
+          </a>
+          {" · "}
+          <a
+            href="https://www.amazon.com/Poet-Who-Forgot-Her-Name/dp/B0GDVZ1WMC"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Amazon
+          </a>
           <br />
+          <a href="/books/the-girl-who-grew-fangs">
+            <em>The Girl Who Grew Fangs</em>
+          </a>
+          {" · "}
+          <a
+            href="https://www.amazon.com/gp/product/B0GP1N2ZCF"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Amazon
+          </a>
+        </p>
+
+        <p>
           Host of <a href="/audio">Expect Nothing</a>.
         </p>
 
         <p>
+          <a href="/books">The books →</a>
+          <br />
           <a href="/start">Start here →</a>
         </p>
       </div>
