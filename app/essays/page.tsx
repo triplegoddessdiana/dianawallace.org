@@ -1,15 +1,15 @@
 import Link from "next/link";
-import { getWrittenEssays, ESSAY_CATEGORIES } from "@/app/lib/essays";
+import { getPublicEssays, ESSAY_CATEGORIES } from "@/app/lib/essays";
 
 export const metadata = {
   title: "Essays",
   description:
-    "Essays by Diana Wallace on human agency, attention, memory, and meaning. Frames for seeing.",
+    "Essays by Diana Wallace on memory and meaning. Frames for seeing.",
   alternates: { canonical: "/essays" },
 };
 
 export default function EssaysPage() {
-  const essays = getWrittenEssays();
+  const essays = getPublicEssays();
 
   return (
     <main>
