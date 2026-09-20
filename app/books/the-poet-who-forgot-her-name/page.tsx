@@ -183,7 +183,7 @@ export default function PoetPage() {
         <h2>Get the Book</h2>
         <p>
           <a
-            href="https://a.co/d/0hMPmaNv"
+            href="https://www.amazon.com/Poet-Who-Forgot-Her-Name/dp/B0GDVZ1WMC"
             target="_blank"
             rel="noreferrer"
           >

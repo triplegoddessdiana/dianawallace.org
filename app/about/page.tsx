@@ -42,12 +42,12 @@ export default function AboutPage() {
       <figure className="about-signature">
         <img
           src="/about/diana-wallace-signature.png"
-          alt="Diana Wallace signature"
+          alt="Signature of Diana Wallace, poet"
         />
       </figure>
 
       <div className="prose">
-        <p>I'm Diana Wallace.</p>
+        <p>I&apos;m Diana Wallace, a poet.</p>
 
         <p>
           I&apos;m the author of{" "}

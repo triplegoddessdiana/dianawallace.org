@@ -145,7 +145,7 @@ export default function RootLayout({
           <figure className="footer-signature">
             <img
               src="/about/diana-wallace-signature.png"
-              alt="Diana Wallace signature"
+              alt="Signature of Diana Wallace, poet"
             />
           </figure>
         </footer>
