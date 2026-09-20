@@ -33,9 +33,8 @@ export default function WorkPage() {
 
         <h2>Essays</h2>
         <p>
-          Twelve <Link href="/essays">essays</Link> introducing frames — ways of
-          seeing — on agency, attention, memory, and culture. Start with{" "}
-          <Link href="/essays/human-agency">Human Agency</Link>.
+          <Link href="/essays">Essays</Link> introducing frames — ways of
+          seeing — on memory and meaning.
         </p>
 
         <h2>Audio</h2>

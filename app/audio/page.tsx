@@ -122,7 +122,7 @@ export default function AudioPage() {
           <Link href="/books">Explore The Forgetting trilogy →</Link>
         </p>
         <p>
-          <Link href="/essays/human-agency">Read: Human Agency →</Link>
+          <Link href="/essays">Read the essays →</Link>
         </p>
       </section>
     </main>
