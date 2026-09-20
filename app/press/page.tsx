@@ -23,6 +23,11 @@ export default function PressPage() {
           <br />
           <a href="mailto:press@dianawallace.org">press@dianawallace.org</a>
         </p>
+
+        <p>
+          For a reading or bookstore evening, write Diana Wallace, poet, at{" "}
+          <a href="mailto:diana@aliholly.com">diana@aliholly.com</a>.
+        </p>
       </div>
     </>
   );
