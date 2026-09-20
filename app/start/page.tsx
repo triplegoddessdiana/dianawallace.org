@@ -76,8 +76,7 @@ export default function StartHerePage() {
         <dl className="kv">
           <dt>Essays</dt>
           <dd>
-            <Link href="/essays">Twelve essays</Link> on agency, attention,
-            memory, and culture.
+            <Link href="/essays">Essays</Link> on memory and meaning.
           </dd>
 
           <dt>Philosophy</dt>

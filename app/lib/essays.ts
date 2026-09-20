@@ -212,12 +212,27 @@ export const ESSAYS: Essay[] = [
   },
 ];
 
+/**
+ * Public Essays shelf. Files for every essay remain in the repo.
+ * Unlisted titles can return later without rewriting bodies.
+ */
+const PUBLIC_ESSAY_SLUGS = new Set([
+  "glow-anyway",
+  "remembrance-is-orientation",
+  "myth-is-a-technology-of-meaning",
+  "silence-as-signal",
+]);
+
 export function getEssayBySlug(slug: string) {
   return ESSAYS.find((e) => e.slug === slug);
 }
 
 export function getWrittenEssays() {
   return ESSAYS.filter((e) => e.status === "Written");
+}
+
+export function getPublicEssays() {
+  return getWrittenEssays().filter((e) => PUBLIC_ESSAY_SLUGS.has(e.slug));
 }
 
 export function getDeclaredFrames() {
