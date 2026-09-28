@@ -310,6 +310,16 @@ export default function PoetPage() {
           Diana Wallace is a poet, filmmaker, and author of The Forgetting
           trilogy. <em>The Poet Who Forgot Her Name</em> is Book I.
         </p>
+        <p>
+          <Link href="/guides/poetry-for-healing-after-trauma">
+            Read: Poetry for Healing After Trauma →
+          </Link>
+        </p>
+        <p>
+          <Link href="/guides/poems-about-finding-yourself-again">
+            Read: Poems About Finding Yourself Again →
+          </Link>
+        </p>
       </section>
 
       {/* ── Continue the Trilogy ── */}

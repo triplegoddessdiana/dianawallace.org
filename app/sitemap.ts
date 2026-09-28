@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: 'https://dianawallace.org/books', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: 'https://dianawallace.org/books/the-poet-who-forgot-her-name', lastModified: new Date(), changeFrequency: 'weekly', priority: 1.0 },
     { url: 'https://dianawallace.org/books/the-girl-who-grew-fangs', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: 'https://dianawallace.org/guides/poetry-for-healing-after-trauma', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: 'https://dianawallace.org/guides/poems-about-finding-yourself-again', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: 'https://dianawallace.org/audio', lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: 'https://dianawallace.org/audio/the-girl-returns', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: 'https://dianawallace.org/essays', lastModified: new Date(), changeFrequency: 'weekly', priority: 0.7 },
