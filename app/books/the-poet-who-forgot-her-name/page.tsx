@@ -260,16 +260,6 @@ export default function PoetPage() {
         </dl>
       </section>
 
-      {/* ── Awards ── */}
-      <section className="book-page-section">
-        <h2>Award Consideration — 2026</h2>
-        <ul className="book-page-awards">
-          <li>Eric Hoffer Book Award</li>
-          <li>Nautilus Book Awards — Poetry</li>
-          <li>Nautilus Book Awards — Heroic</li>
-        </ul>
-      </section>
-
       {/* ── Reader Response ── */}
       <section className="book-page-section">
         <h2>Reader Response</h2>
