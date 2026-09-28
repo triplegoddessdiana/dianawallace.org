@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: 'https://dianawallace.org', lastModified: new Date(), changeFrequency: 'weekly', priority: 1.0 },
     { url: 'https://dianawallace.org/books', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: 'https://dianawallace.org/books/the-poet-who-forgot-her-name', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: 'https://dianawallace.org/books/the-poet-who-forgot-her-name', lastModified: new Date(), changeFrequency: 'weekly', priority: 1.0 },
     { url: 'https://dianawallace.org/books/the-girl-who-grew-fangs', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: 'https://dianawallace.org/audio', lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: 'https://dianawallace.org/audio/the-girl-returns', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },

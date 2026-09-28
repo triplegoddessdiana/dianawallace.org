@@ -3,14 +3,33 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "The Poet Who Forgot Her Name — Book I of The Forgetting Trilogy",
+  title: "The Poet Who Forgot Her Name — Trauma Healing Poetry",
   description:
-    "Poems for the Returning Self by Diana Wallace. A poetry collection in four movements — forgetting, searching, remembering, returning. Book I of The Forgetting trilogy.",
+    "The Poet Who Forgot Her Name: Poems for the Returning Self by Diana Wallace is a poetry collection about trauma, survival, lost identity, emotional healing, and returning to yourself.",
+  keywords: [
+    "The Poet Who Forgot Her Name",
+    "Diana Wallace",
+    "trauma healing poetry",
+    "poetry books about healing from trauma",
+    "poems for trauma survivors",
+    "poetry about reclaiming identity",
+    "poetry about emotional abuse",
+    "poems about finding yourself again",
+    "books for women healing from trauma",
+  ],
   alternates: { canonical: "/books/the-poet-who-forgot-her-name" },
   openGraph: {
     title: "The Poet Who Forgot Her Name · Diana Wallace",
     description:
-      "Poems for the Returning Self. A collection in four movements — forgetting, searching, remembering, returning. Book I of The Forgetting trilogy by Diana Wallace.",
+      "A poetry collection about trauma, survival, lost identity, emotional healing, and returning to yourself.",
+    type: "book",
+    images: ["/covers/the-poet-who-forgot-her-name.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Poet Who Forgot Her Name · Diana Wallace",
+    description:
+      "Poems for the Returning Self—a poetry collection about trauma, survival, healing, and reclaiming identity.",
     images: ["/covers/the-poet-who-forgot-her-name.jpg"],
   },
 };
@@ -24,18 +43,75 @@ export default function PoetPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Book",
-            name: "The Poet Who Forgot Her Name",
-            author: { "@type": "Person", name: "Diana Wallace" },
-            bookFormat: "Paperback",
+            "@id": "https://dianawallace.org/books/the-poet-who-forgot-her-name#book",
+            name: "The Poet Who Forgot Her Name: Poems for the Returning Self",
+            alternateName: "The Poet Who Forgot Her Name",
+            url: "https://dianawallace.org/books/the-poet-who-forgot-her-name",
+            author: {
+              "@type": "Person",
+              "@id": "https://dianawallace.org/#person",
+              name: "Diana Wallace",
+              url: "https://dianawallace.org",
+            },
+            bookFormat: "https://schema.org/Paperback",
             isbn: "9798241723536",
             numberOfPages: 216,
             datePublished: "2025",
             description:
-              "Poems for the Returning Self. A collection in four movements — forgetting, searching, remembering, returning.",
-            genre: "Poetry",
+              "A poetry collection about trauma, survival, lost identity, emotional healing, reclaiming voice, and returning to yourself.",
+            genre: [
+              "Poetry",
+              "Trauma and healing poetry",
+              "Women's poetry",
+              "Poetry about identity and survival",
+            ],
             inLanguage: "en",
             publisher: "Independent",
             image: "https://dianawallace.org/covers/the-poet-who-forgot-her-name.jpg",
+            isPartOf: {
+              "@type": "BookSeries",
+              name: "The Forgetting",
+              position: 1,
+            },
+            potentialAction: {
+              "@type": "BuyAction",
+              target: "https://www.amazon.com/Poet-Who-Forgot-Her-Name/dp/B0GDVZ1WMC",
+            },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What is The Poet Who Forgot Her Name about?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "It is a poetry collection about trauma, survival, lost identity, finding your voice, emotional healing, and returning to yourself.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Is The Poet Who Forgot Her Name a book about healing from trauma?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. The collection explores emotional survival, identity loss, silence, boundaries, self-worth, and reclaiming the self after trauma. It is literature, not a replacement for professional mental-health care.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Who wrote The Poet Who Forgot Her Name?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Poet and filmmaker Diana Wallace wrote The Poet Who Forgot Her Name: Poems for the Returning Self.",
+                },
+              },
+            ],
           }),
         }}
       />
@@ -76,12 +152,35 @@ export default function PoetPage() {
 
       {/* ── Positioning ── */}
       <section className="book-page-section">
+        <h2>Poetry for Healing After Trauma</h2>
+        <p>
+          <strong>The Poet Who Forgot Her Name</strong> gives language to
+          places trauma can leave unnamed: silence, dissociation,
+          self-abandonment, grief, survival, and the search for a voice that
+          still belongs to you. It is poetry for readers who survived by
+          becoming smaller—and are ready to return to themselves.
+        </p>
         <p>
           This book began in the dark. These poems were written to mark
           the path back with a light — written as evidence that a woman
           can disappear slowly, notice the disappearance, and choose to
           return. That the returning is not a single moment, but a
           practice. And that the light was never gone — only unclaimed.
+        </p>
+      </section>
+
+      <section className="book-page-section">
+        <h2>Who This Book Is For</h2>
+        <p>
+          Readers seeking trauma-healing poetry, poems about emotional abuse,
+          boundaries, lost identity, grief, recovery, self-worth, and finding
+          yourself again will recognize this territory. The book offers
+          witness and companionship rather than a clinical program.
+        </p>
+        <p>
+          It is especially for women returning to themselves after trauma,
+          loss, controlling relationships, burnout, or years spent
+          disappearing inside other people&apos;s needs.
         </p>
       </section>
 
@@ -189,6 +288,27 @@ export default function PoetPage() {
           >
             Amazon →
           </a>
+        </p>
+      </section>
+
+      <section className="book-page-section">
+        <h2>Questions Readers Ask</h2>
+        <h3>What is <em>The Poet Who Forgot Her Name</em> about?</h3>
+        <p>
+          It is a poetry collection about trauma, survival, lost identity,
+          finding your voice, emotional healing, and returning to yourself.
+        </p>
+        <h3>Is it a trauma-recovery book?</h3>
+        <p>
+          It is literary poetry grounded in themes of trauma and emotional
+          healing. It can offer recognition and language for difficult
+          experiences, but it is not therapy or a substitute for professional
+          care.
+        </p>
+        <h3>Who is Diana Wallace?</h3>
+        <p>
+          Diana Wallace is a poet, filmmaker, and author of The Forgetting
+          trilogy. <em>The Poet Who Forgot Her Name</em> is Book I.
         </p>
       </section>
 
