@@ -1,82 +1,72 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export const metadata = {
-  title: "About Diana Wallace — Poet and Author",
+  title: "About",
   description:
-    "Diana Wallace is the author of The Forgetting trilogy — The Poet Who Forgot Her Name and The Girl Who Grew Fangs — and host of the Expect Nothing podcast.",
+    "Diana Wallace is a poet. She is the author of The Poet Who Forgot Her Name, The Girl Who Grew Fangs, and Year of the Fire Horse, coming. She lives with her husband and three daughters.",
   alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
   return (
-    <main className="page about">
-      {/* JSON-LD for entity + authorship (invisible) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Diana Wallace",
-            url: "https://www.dianawallace.org",
-            sameAs: ["https://x.com/DianaWallace369"],
-            jobTitle: "Author",
-            works: [
-              {
-                "@type": "Book",
-                name: "The Poet Who Forgot Her Name",
-                author: { "@type": "Person", name: "Diana Wallace" },
-              },
-            ],
-          }),
-        }}
-      />
-
-      <h1 data-redundant="true">About</h1>
-
-      <figure className="about-photo">
-        <img
-          src="/about/diana-wallace.jpg"
-          alt="Diana Wallace"
-        />
-      </figure>
+    <>
+      <h1>About</h1>
 
       <figure className="about-signature">
-        <img
+        <Image
           src="/about/diana-wallace-signature.png"
           alt="Signature of Diana Wallace, poet"
+          width={492}
+          height={240}
         />
       </figure>
 
       <div className="prose">
-        <p>I&apos;m Diana Wallace, a poet.</p>
+        <p>I&apos;m Diana Wallace. I write poems.</p>
 
         <p>
-          I&apos;m the author of{" "}
-          <a href="/books/the-poet-who-forgot-her-name">
+          The books are{" "}
+          <Link href="/books/the-poet-who-forgot-her-name">
             <em>The Poet Who Forgot Her Name</em>
-          </a>{" "}
-          and{" "}
-          <a href="/books/the-girl-who-grew-fangs">
+          </Link>
+          ,{" "}
+          <Link href="/books/the-girl-who-grew-fangs">
             <em>The Girl Who Grew Fangs</em>
-          </a>
-          , the first two books of{" "}
-          <a href="/books">The Forgetting trilogy</a>. I also host the{" "}
-          <a href="/audio">Expect Nothing</a> podcast.
+          </Link>
+          , and{" "}
+          <Link href="/books/year-of-the-fire-horse">
+            <em>Year of the Fire Horse</em>
+          </Link>
+          , which is still on its way.
+        </p>
+
+        <p>I live with my husband and our three daughters.</p>
+
+        <p>
+          If you would like a reading — Logan St, or a bookstore evening —{" "}
+          <Link href="/contact#reading">write to me</Link>.
         </p>
 
         <p>
-          Before working primarily in language, I kept a visual practice focused
-          on the relationship between humans and non-human life. That work
-          remains collected as <a href="/need-more-wildlife">Need More Wildlife</a>.
+          Some of the work is spoken aloud. Those pieces are{" "}
+          <Link href="/audio">Expect Nothing</Link>.
         </p>
 
-        <p>
-          I am also the founder of{" "}
-          <a href="https://aliholly.com" target="_blank" rel="noopener noreferrer">
+        <p className="quiet">
+          Before the poems, I kept a visual practice about humans and other
+          living things. That work remains as{" "}
+          <Link href="/need-more-wildlife">Need More Wildlife</Link>.
+        </p>
+
+        <p className="quiet">
+          I also founded{" "}
+          <a href="https://aliholly.com" target="_blank" rel="noreferrer">
             Aliholly
           </a>
-          , the first streaming platform for AI-generated cinema and music.
+          .
         </p>
       </div>
-    </main>
+    </>
   );
 }

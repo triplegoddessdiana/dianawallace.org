@@ -227,12 +227,12 @@ export default function ObjectsNotPostsPage() {
       <hr style={{ margin: "2rem 0", opacity: 0.2 }} />
 
       <p style={{ marginTop: "2rem", fontStyle: "italic", opacity: 0.85 }}>
-        Aliholly is the author's answer to this question — a streaming platform where AI serves human creators, not the reverse.{" "}
+        Aliholly is the author&apos;s answer to this question — a streaming platform where AI serves human creators, not the reverse.{" "}
         <a href="https://aliholly.com" target="_blank" rel="noopener noreferrer">aliholly.com</a>
       </p>
 
       <p>
-        <Link href="/books">Read The Forgetting trilogy →</Link>
+        <Link href="/books">Read the books →</Link>
       </p>
       <p>
         <Link href="/audio">Listen: Expect Nothing podcast →</Link>

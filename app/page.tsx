@@ -1,65 +1,62 @@
+import Link from "next/link";
+import BookShelf from "./components/BookShelf";
+
 export const metadata = {
-  title: "Diana Wallace — Poet, Author, Essayist",
+  title: { absolute: "Diana Wallace — Poet" },
   description:
-    "Diana Wallace, poet. Author of The Forgetting trilogy — The Poet Who Forgot Her Name and The Girl Who Grew Fangs. Poetry books on forgetting, remembering, and returning.",
+    "Diana Wallace writes poems for the long way home. Get The Poet Who Forgot Her Name and The Girl Who Grew Fangs. Year of the Fire Horse is coming.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "Diana Wallace — Poet",
+    description:
+      "Poems for the long way home. Three books — two you can buy now, and Year of the Fire Horse, still on its way.",
+    images: ["/covers/the-poet-who-forgot-her-name.jpg"],
+  },
 };
 
 export default function HomePage() {
   return (
     <>
-      <h1 data-redundant="true">Diana Wallace</h1>
-
-      <figure className="home-image">
-        <img
-          src="/home/author-desk.webp"
-          alt="A quiet writing desk with books, papers, and a candle beneath a crescent moon"
-        />
-      </figure>
-
-      <div className="prose">
-        <p>
-          Diana Wallace, poet.
-          <br />
-          Author of <a href="/books">The Forgetting trilogy</a>.
+      <section className="hero">
+        <p className="eyebrow">Poet</p>
+        <h1>Poems for the long way home.</h1>
+        <p className="hero-for">
+          For the woman who became smaller to survive, and is ready to return.
         </p>
+        <a className="btn" href="#the-books">
+          Get the books
+        </a>
+      </section>
 
-        <p>
-          <a href="/books/the-poet-who-forgot-her-name">
+      <BookShelf />
+
+      <section className="stanza-block" aria-label="A stanza">
+        <blockquote className="stanza">
+          <p>
+            The night found me
+            <br />
+            before I found myself.
+            <br />
+            She leaned close,
+            <br />
+            moon-breath trembling on my cheek,
+            <br />
+            and whispered, <em>Child…</em>
+            <br />
+            <em>you have been gone too long.</em>
+          </p>
+        </blockquote>
+        <p className="stanza-cite">
+          From{" "}
+          <Link href="/books/the-poet-who-forgot-her-name">
             <em>The Poet Who Forgot Her Name</em>
-          </a>
-          {" · "}
-          <a
-            href="https://www.amazon.com/Poet-Who-Forgot-Her-Name/dp/B0GDVZ1WMC"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Amazon
-          </a>
-          <br />
-          <a href="/books/the-girl-who-grew-fangs">
-            <em>The Girl Who Grew Fangs</em>
-          </a>
-          {" · "}
-          <a
-            href="https://www.amazon.com/gp/product/B0GP1N2ZCF"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Amazon
-          </a>
+          </Link>
         </p>
+      </section>
 
-        <p>
-          Host of <a href="/audio">Expect Nothing</a>.
-        </p>
-
-        <p>
-          <a href="/books">The books →</a>
-          <br />
-          <a href="/start">Start here →</a>
-        </p>
-      </div>
+      <p className="home-next">
+        <Link href="/about">About the poet</Link>
+      </p>
     </>
   );
 }

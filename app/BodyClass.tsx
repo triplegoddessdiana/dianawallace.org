@@ -7,8 +7,11 @@ export default function BodyClass() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const isAbout = pathname === "/about";
-    document.body.classList.toggle("is-about", isAbout);
+    document.body.classList.toggle("is-about", pathname === "/about");
+    document.body.classList.toggle(
+      "is-wide",
+      pathname === "/" || pathname.startsWith("/books"),
+    );
   }, [pathname]);
 
   return null;

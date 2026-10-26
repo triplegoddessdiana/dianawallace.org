@@ -1,16 +1,21 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import BuyButton from "@/app/components/BuyButton";
+import { bookByRoman } from "@/app/lib/books";
+
+const book = bookByRoman("II");
+const amazon = book.amazon as string;
 
 export const metadata: Metadata = {
-  title: "The Girl Who Grew Fangs — Book II of The Forgetting Trilogy",
+  title: "The Girl Who Grew Fangs",
   description:
-    "A Book of Remembering After the Fall Into Shadow — 53 poems in four parts by Diana Wallace. Book II of The Forgetting trilogy. The soul, like the wolf, does not forget its own nature.",
+    "The Girl Who Grew Fangs: A Book of Remembering After the Fall Into Shadow, by Diana Wallace. 53 poems. Paperback $16.99, eBook $9.99. The soul, like the wolf, does not forget its own nature.",
   alternates: { canonical: "/books/the-girl-who-grew-fangs" },
   openGraph: {
     title: "The Girl Who Grew Fangs · Diana Wallace",
     description:
-      "But the soul, like the wolf, does not forget its own nature. Book II of The Forgetting trilogy by Diana Wallace.",
+      "But the soul, like the wolf, does not forget its own nature. 53 poems by Diana Wallace.",
     images: ["/covers/the-girl-who-grew-fangs.jpg"],
   },
 };
@@ -26,15 +31,19 @@ export default function FangsPage() {
             "@type": "Book",
             name: "The Girl Who Grew Fangs: A Book of Remembering After the Fall Into Shadow",
             author: { "@type": "Person", name: "Diana Wallace" },
-            bookFormat: "Paperback",
+            bookFormat: "https://schema.org/Paperback",
             isbn: "9798994577424",
             datePublished: "2026-02-17",
             description:
-              "53 poems in four parts. Book II of The Forgetting trilogy. But the soul, like the wolf, does not forget its own nature.",
+              "53 poems in four parts. But the soul, like the wolf, does not forget its own nature.",
             genre: "Poetry",
             numberOfPages: 175,
             inLanguage: "en",
             image: "https://dianawallace.org/covers/the-girl-who-grew-fangs.jpg",
+            potentialAction: {
+              "@type": "BuyAction",
+              target: amazon,
+            },
           }),
         }}
       />
@@ -47,145 +56,136 @@ export default function FangsPage() {
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: "https://dianawallace.org" },
               { "@type": "ListItem", position: 2, name: "Books", item: "https://dianawallace.org/books" },
-              { "@type": "ListItem", position: 3, name: "The Girl Who Grew Fangs", item: "https://dianawallace.org/books/the-girl-who-grew-fangs" },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "The Girl Who Grew Fangs",
+                item: "https://dianawallace.org/books/the-girl-who-grew-fangs",
+              },
             ],
           }),
         }}
       />
-      {/* ── Cover + Title ── */}
-      <header className="book-page-top">
-        <figure className="book-page-cover">
+
+      <header className="book-hero">
+        <figure className="book-hero-cover">
           <Image
-            src="/covers/the-girl-who-grew-fangs.jpg"
+            src={book.cover}
             alt="Cover of The Girl Who Grew Fangs by Diana Wallace"
-            width={220}
-            height={330}
+            width={book.coverWidth}
+            height={book.coverHeight}
             priority
-            style={{
-              borderRadius: "4px",
-              boxShadow: "0 12px 32px rgba(0,0,0,0.15)",
-            }}
           />
         </figure>
-
-        <h1>The Girl Who Grew Fangs</h1>
-        <p className="book-page-subtitle">
-          A Book of Remembering After the Fall Into Shadow
-        </p>
-        <p className="book-page-author">Diana Wallace · 2026</p>
+        <div>
+          <p className="book-kicker">Book II · 2026</p>
+          <h1>The Girl Who Grew Fangs</h1>
+          <p className="book-page-subtitle">
+            A Book of Remembering After the Fall Into Shadow
+          </p>
+          <p className="book-page-author">Diana Wallace</p>
+          <p className="book-price">{book.price}</p>
+          <BuyButton href={amazon} />
+        </div>
       </header>
 
-      {/* ── Tagline ── */}
-      <section className="book-page-section">
+      <div className="book-body">
         <blockquote className="book-page-excerpt">
-          <p>
-            <em>
-              But the soul, like the wolf, does not forget its own nature.
-            </em>
-          </p>
+          <p>But the soul, like the wolf, does not forget its own nature.</p>
         </blockquote>
-      </section>
 
-      {/* ── Positioning ── */}
-      <section className="book-page-section">
-        <p>
-          Book II of <strong>The Forgetting</strong> trilogy. Where{" "}
-          <em>The Poet Who Forgot Her Name</em> traced a moon arc —
-          forgetting and remembering by moonlight — this book follows the
-          feral arc: the descent into shadow, the growl that becomes a
-          prayer, and the long clawing return to selfhood.
-        </p>
-        <p>
-          These 53 poems move through darkening, turning, integration, and
-          return. They are for anyone who has fallen — and found teeth
-          where there used to be silence.
-        </p>
-      </section>
+        <section>
+          <h2>After the fall into shadow</h2>
+          <p>
+            The second of the three books. Where{" "}
+            <em>The Poet Who Forgot Her Name</em> traced a moon arc — forgetting
+            and remembering by moonlight — this book follows the feral arc: the
+            descent into shadow, the growl that becomes a prayer, and the long
+            clawing return to selfhood.
+          </p>
+          <p>
+            These 53 poems move through darkening, turning, integration, and
+            return. They are for anyone who has fallen — and found teeth where
+            there used to be silence.
+          </p>
+        </section>
 
-      {/* ── Structure ── */}
-      <section className="book-page-section">
-        <h2>Structure</h2>
-        <ol className="book-page-parts">
-          <li>
-            <strong>Darkening</strong> — The fall into shadow. The world
-            narrows. The familiar self dissolves.
-          </li>
-          <li>
-            <strong>Turning</strong> — Something feral stirs. The body
-            remembers what the mind forgot. Instinct returns before
-            language does.
-          </li>
-          <li>
-            <strong>Integration</strong> — The wolf and the woman meet.
-            Neither is destroyed. A harder, wilder wholeness takes shape.
-          </li>
-          <li>
-            <strong>Return</strong> — She walks back — not tame, not
-            broken. Carrying everything. Fangs and all.
-          </li>
-        </ol>
-      </section>
+        <section>
+          <h2>Four parts</h2>
+          <ol className="book-page-parts">
+            <li>
+              <strong>Darkening</strong> — The fall into shadow. The world
+              narrows. The familiar self dissolves.
+            </li>
+            <li>
+              <strong>Turning</strong> — Something feral stirs. The body
+              remembers what the mind forgot. Instinct returns before language
+              does.
+            </li>
+            <li>
+              <strong>Integration</strong> — The wolf and the woman meet.
+              Neither is destroyed. A harder, wilder wholeness takes shape.
+            </li>
+            <li>
+              <strong>Return</strong> — She walks back — not tame, not broken.
+              Carrying everything. Fangs and all.
+            </li>
+          </ol>
+        </section>
 
-      {/* ── Details ── */}
-      <section className="book-page-section">
-        <h2>Details</h2>
-        <dl className="book-page-details">
-          <div>
-            <dt>Series</dt>
-            <dd>The Forgetting · Book II (Feral Arc)</dd>
-          </div>
-          <div>
-            <dt>Poems</dt>
-            <dd>53</dd>
-          </div>
-          <div>
-            <dt>Pages</dt>
-            <dd>175</dd>
-          </div>
-          <div>
-            <dt>ISBN</dt>
-            <dd>979-8-9945774-2-4</dd>
-          </div>
-          <div>
-            <dt>Published</dt>
-            <dd>February 17, 2026</dd>
-          </div>
-          <div>
-            <dt>Edition</dt>
-            <dd>First</dd>
-          </div>
-        </dl>
-      </section>
+        <section>
+          <h2>Details</h2>
+          <dl className="book-page-details">
+            <div>
+              <dt>Place</dt>
+              <dd>Book II of three</dd>
+            </div>
+            <div>
+              <dt>Poems</dt>
+              <dd>53</dd>
+            </div>
+            <div>
+              <dt>Pages</dt>
+              <dd>175</dd>
+            </div>
+            <div>
+              <dt>ISBN</dt>
+              <dd>979-8-9945774-2-4</dd>
+            </div>
+            <div>
+              <dt>Published</dt>
+              <dd>February 17, 2026</dd>
+            </div>
+            <div>
+              <dt>Edition</dt>
+              <dd>First</dd>
+            </div>
+            <div>
+              <dt>Paperback</dt>
+              <dd>$16.99</dd>
+            </div>
+            <div>
+              <dt>eBook</dt>
+              <dd>$9.99</dd>
+            </div>
+          </dl>
+          <BuyButton href={amazon} />
+        </section>
 
-      {/* ── Purchase ── */}
-      <section className="book-page-section">
-        <h2>Get the Book</h2>
-        <p>Paperback $16.99&ensp;·&ensp;eBook $9.99</p>
-        <p>
-          <a
-            href="https://www.amazon.com/gp/product/B0GP1N2ZCF"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Amazon →
-          </a>
-        </p>
-      </section>
-
-      {/* ── The Trilogy ── */}
-      <section className="book-page-section">
-        <h2>The Forgetting Trilogy</h2>
-        <p>
-          <Link href="/books/the-poet-who-forgot-her-name">
-            Read Book I: The Poet Who Forgot Her Name →
-          </Link>
-        </p>
-        <p>
-          <Link href="/audio">
-            Listen: Expect Nothing podcast →
-          </Link>
-        </p>
-      </section>
+        <section>
+          <h2>The other books</h2>
+          <p>
+            <Link href="/books/the-poet-who-forgot-her-name">
+              Book I: <em>The Poet Who Forgot Her Name</em>
+            </Link>
+          </p>
+          <p>
+            <Link href="/books/year-of-the-fire-horse">
+              Book III: <em>Year of the Fire Horse</em> — coming
+            </Link>
+          </p>
+        </section>
+      </div>
     </article>
   );
 }

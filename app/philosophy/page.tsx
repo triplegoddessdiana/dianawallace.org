@@ -100,6 +100,10 @@ export default function PhilosophyPage() {
       </p>
 
       <p>Individual essays may test, contradict, or refine them.</p>
+
+      <p>
+        <a href="/books">The books</a> are the front door.
+      </p>
     </main>
   );
 }
