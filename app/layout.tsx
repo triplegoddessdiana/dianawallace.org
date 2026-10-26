@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
 import BodyClass from "./BodyClass";
+import World from "./components/World";
 
 const display = Cormorant_Garamond({
   variable: "--font-display",
@@ -108,6 +109,7 @@ export default function RootLayout({
       </head>
       <body className={`${display.variable} ${body.variable} ${sans.variable}`}>
         <BodyClass />
+        <World />
 
         <header className="site-header">
           <nav className="site-nav" aria-label="Primary">
