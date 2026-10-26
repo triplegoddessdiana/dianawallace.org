@@ -102,28 +102,6 @@ export default function World() {
         <span className="falls-stream falls-stream-thin" />
         <span className="falls-mist" />
       </div>
-      <svg
-        className="world-river"
-        viewBox="0 0 1200 420"
-        preserveAspectRatio="none"
-      >
-        <path
-          className="river-bed"
-          d="M 430 8 C 390 70, 300 50, 230 130 C 150 220, 280 240, 190 320 C 80 410, 520 400, 920 372 C 1120 350, 1180 210, 1120 70"
-        />
-        <path
-          className="river-bed river-bed-far"
-          d="M 250 180 C 140 250, 220 310, 160 380 C 360 430, 780 400, 1080 340"
-        />
-        <path
-          className="river-current"
-          d="M 430 8 C 390 70, 300 50, 230 130 C 150 220, 280 240, 190 320 C 80 410, 520 400, 920 372 C 1120 350, 1180 210, 1120 70"
-        />
-        <path
-          className="river-current river-current-slow"
-          d="M 250 180 C 140 250, 220 310, 160 380 C 360 430, 780 400, 1080 340"
-        />
-      </svg>
     </div>
   );
 }
