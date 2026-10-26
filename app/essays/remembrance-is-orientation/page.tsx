@@ -224,7 +224,7 @@ export default function RemembranceIsOrientationPage() {
 
       <hr style={{ margin: "2rem 0", opacity: 0.2 }} />
       <p>
-        <Link href="/books">Read The Forgetting trilogy →</Link>
+        <Link href="/books">Read the books →</Link>
       </p>
       <p>
         <Link href="/audio">Listen: Expect Nothing podcast →</Link>

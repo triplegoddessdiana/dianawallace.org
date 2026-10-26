@@ -1,38 +1,53 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import BuyButton from "@/app/components/BuyButton";
+import { bookByRoman } from "@/app/lib/books";
+
+const book = bookByRoman("I");
+const amazon = book.amazon as string;
 
 export const metadata: Metadata = {
-  title: "The Poet Who Forgot Her Name — Trauma Healing Poetry",
+  title: "The Poet Who Forgot Her Name",
   description:
-    "The Poet Who Forgot Her Name: Poems for the Returning Self by Diana Wallace is a poetry collection about trauma, survival, lost identity, emotional healing, and returning to yourself.",
+    "The Poet Who Forgot Her Name: Poems for the Returning Self, by Diana Wallace. A poetry collection in four movements — forgetting, searching, remembering, returning. Paperback, 216 pages.",
   keywords: [
     "The Poet Who Forgot Her Name",
     "Diana Wallace",
-    "trauma healing poetry",
-    "poetry books about healing from trauma",
-    "poems for trauma survivors",
-    "poetry about reclaiming identity",
-    "poetry about emotional abuse",
+    "Poems for the Returning Self",
+    "poetry about returning",
     "poems about finding yourself again",
-    "books for women healing from trauma",
   ],
   alternates: { canonical: "/books/the-poet-who-forgot-her-name" },
   openGraph: {
     title: "The Poet Who Forgot Her Name · Diana Wallace",
     description:
-      "A poetry collection about trauma, survival, lost identity, emotional healing, and returning to yourself.",
+      "Poems for the Returning Self. Four movements: forgetting, searching, remembering, returning.",
     type: "book",
     images: ["/covers/the-poet-who-forgot-her-name.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "The Poet Who Forgot Her Name · Diana Wallace",
-    description:
-      "Poems for the Returning Self—a poetry collection about trauma, survival, healing, and reclaiming identity.",
+    description: "Poems for the Returning Self, by Diana Wallace.",
     images: ["/covers/the-poet-who-forgot-her-name.jpg"],
   },
 };
+
+const faq = [
+  {
+    q: "What is The Poet Who Forgot Her Name about?",
+    a: "It is a poetry collection about losing a name, surviving the silence, and returning to yourself. Four movements: forgetting, searching, remembering, returning.",
+  },
+  {
+    q: "Is it a book about healing from trauma?",
+    a: "It is poetry, written from the places trauma leaves quiet. It can offer recognition and company. It is not therapy, and it is not a substitute for professional care.",
+  },
+  {
+    q: "Who wrote The Poet Who Forgot Her Name?",
+    a: "Diana Wallace, a poet. This is the first of her three books.",
+  },
+];
 
 export default function PoetPage() {
   return (
@@ -49,7 +64,6 @@ export default function PoetPage() {
             url: "https://dianawallace.org/books/the-poet-who-forgot-her-name",
             author: {
               "@type": "Person",
-              "@id": "https://dianawallace.org/#person",
               name: "Diana Wallace",
               url: "https://dianawallace.org",
             },
@@ -58,24 +72,14 @@ export default function PoetPage() {
             numberOfPages: 216,
             datePublished: "2025",
             description:
-              "A poetry collection about trauma, survival, lost identity, emotional healing, reclaiming voice, and returning to yourself.",
-            genre: [
-              "Poetry",
-              "Trauma and healing poetry",
-              "Women's poetry",
-              "Poetry about identity and survival",
-            ],
+              "Poems for the returning self. Four movements: forgetting, searching, remembering, returning.",
+            genre: ["Poetry"],
             inLanguage: "en",
             publisher: "Independent",
             image: "https://dianawallace.org/covers/the-poet-who-forgot-her-name.jpg",
-            isPartOf: {
-              "@type": "BookSeries",
-              name: "The Forgetting",
-              position: 1,
-            },
             potentialAction: {
               "@type": "BuyAction",
-              target: "https://www.amazon.com/Poet-Who-Forgot-Her-Name/dp/B0GDVZ1WMC",
+              target: amazon,
             },
           }),
         }}
@@ -86,32 +90,11 @@ export default function PoetPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "What is The Poet Who Forgot Her Name about?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "It is a poetry collection about trauma, survival, lost identity, finding your voice, emotional healing, and returning to yourself.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Is The Poet Who Forgot Her Name a book about healing from trauma?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Yes. The collection explores emotional survival, identity loss, silence, boundaries, self-worth, and reclaiming the self after trauma. It is literature, not a replacement for professional mental-health care.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Who wrote The Poet Who Forgot Her Name?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Poet and filmmaker Diana Wallace wrote The Poet Who Forgot Her Name: Poems for the Returning Self.",
-                },
-              },
-            ],
+            mainEntity: faq.map((item) => ({
+              "@type": "Question",
+              name: item.q,
+              acceptedAnswer: { "@type": "Answer", text: item.a },
+            })),
           }),
         }}
       />
@@ -124,208 +107,190 @@ export default function PoetPage() {
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: "https://dianawallace.org" },
               { "@type": "ListItem", position: 2, name: "Books", item: "https://dianawallace.org/books" },
-              { "@type": "ListItem", position: 3, name: "The Poet Who Forgot Her Name", item: "https://dianawallace.org/books/the-poet-who-forgot-her-name" },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "The Poet Who Forgot Her Name",
+                item: "https://dianawallace.org/books/the-poet-who-forgot-her-name",
+              },
             ],
           }),
         }}
       />
-      {/* ── Cover + Title ── */}
-      <header className="book-page-top">
-        <figure className="book-page-cover">
+
+      <header className="book-hero">
+        <figure className="book-hero-cover">
           <Image
-            src="/covers/the-poet-who-forgot-her-name.jpg"
+            src={book.cover}
             alt="Cover of The Poet Who Forgot Her Name by Diana Wallace"
-            width={220}
-            height={330}
+            width={book.coverWidth}
+            height={book.coverHeight}
             priority
-            style={{
-              borderRadius: "4px",
-              boxShadow: "0 12px 32px rgba(0,0,0,0.15)",
-            }}
           />
         </figure>
-
-        <h1>The Poet Who Forgot Her Name</h1>
-        <p className="book-page-subtitle">Poems for the Returning Self</p>
-        <p className="book-page-author">Diana Wallace · 2025</p>
+        <div>
+          <p className="book-kicker">Book I · 2025</p>
+          <h1>The Poet Who Forgot Her Name</h1>
+          <p className="book-page-subtitle">Poems for the Returning Self</p>
+          <p className="book-page-author">Diana Wallace</p>
+          <p className="book-proof">{book.proof}</p>
+          <BuyButton href={amazon} />
+        </div>
       </header>
 
-      {/* ── Positioning ── */}
-      <section className="book-page-section">
-        <h2>Poetry for Healing After Trauma</h2>
-        <p>
-          <strong>The Poet Who Forgot Her Name</strong> gives language to
-          places trauma can leave unnamed: silence, dissociation,
-          self-abandonment, grief, survival, and the search for a voice that
-          still belongs to you. It is poetry for readers who survived by
-          becoming smaller—and are ready to return to themselves.
-        </p>
-        <p>
-          This book began in the dark. These poems were written to mark
-          the path back with a light — written as evidence that a woman
-          can disappear slowly, notice the disappearance, and choose to
-          return. That the returning is not a single moment, but a
-          practice. And that the light was never gone — only unclaimed.
-        </p>
-      </section>
-
-      <section className="book-page-section">
-        <h2>Who This Book Is For</h2>
-        <p>
-          Readers seeking trauma-healing poetry, poems about emotional abuse,
-          boundaries, lost identity, grief, recovery, self-worth, and finding
-          yourself again will recognize this territory. The book offers
-          witness and companionship rather than a clinical program.
-        </p>
-        <p>
-          It is especially for women returning to themselves after trauma,
-          loss, controlling relationships, burnout, or years spent
-          disappearing inside other people&apos;s needs.
-        </p>
-      </section>
-
-      {/* ── Structure ── */}
-      <section className="book-page-section">
-        <h2>Structure</h2>
-        <ol className="book-page-parts">
-          <li>
-            <strong>The Forgetting</strong> — How a woman learns to
-            disappear. Silence as survival. Obedience mistaken for peace.
-          </li>
-          <li>
-            <strong>The Search</strong> — The ache that becomes a compass.
-            Moon, wind, stars, dust. Something in the dark still breathing.
-          </li>
-          <li>
-            <strong>The Remembering</strong> — Moonlight as recognition.
-            The name returns — not spoken, but remembered. The self that
-            was never lost, only unclaimed.
-          </li>
-          <li>
-            <strong>The Return</strong> — A woman who walks back into her
-            own light. Not as triumph — as arrival.
-          </li>
-        </ol>
-      </section>
-
-      {/* ── Excerpt ── */}
-      <section className="book-page-section">
-        <h2>From the Prologue</h2>
-        <blockquote className="book-page-excerpt">
+      <div className="book-body">
+        <section>
+          <h2>For the returning self</h2>
           <p>
-            The night found me<br />
-            before I found myself.<br />
-            She leaned close,<br />
-            moon-breath trembling on my cheek,<br />
-            and whispered, <em>Child…<br />
-            you have been gone too long.</em>
+            These poems give language to what went unnamed: the silence, the
+            disappearance, the grief, and the search for a voice that still
+            belongs to you. They are for the reader who survived by becoming
+            smaller — and is ready to return.
           </p>
           <p>
-            I tried to answer<br />
-            but my voice was dust,<br />
-            a forgotten language<br />
-            tucked beneath my ribs.<br />
-            So the stars spoke for me.<br />
-            They pulsed like a broken heartbeat<br />
-            trying to remember its rhythm.
+            This book began in the dark. These poems were written to mark the
+            path back with a light — written as evidence that a woman can
+            disappear slowly, notice the disappearance, and choose to return.
+            That the returning is not a single moment, but a practice. And that
+            the light was never gone — only unclaimed.
           </p>
-        </blockquote>
-      </section>
+        </section>
 
-      {/* ── Details ── */}
-      <section className="book-page-section">
-        <h2>Details</h2>
-        <dl className="book-page-details">
-          <div>
-            <dt>Format</dt>
-            <dd>Paperback</dd>
-          </div>
-          <div>
-            <dt>Pages</dt>
-            <dd>216</dd>
-          </div>
-          <div>
-            <dt>ISBN</dt>
-            <dd>979-8-241-72353-6</dd>
-          </div>
-          <div>
-            <dt>Published</dt>
-            <dd>2025</dd>
-          </div>
-          <div>
-            <dt>Edition</dt>
-            <dd>First</dd>
-          </div>
-          {/* Series TBD */}
-        </dl>
-      </section>
+        <section>
+          <h2>Who it’s for</h2>
+          <p>
+            For the woman coming back after loss, a controlling relationship,
+            burnout, or years spent disappearing inside other people’s needs.
+            If you came looking for poetry about healing after trauma, you are
+            in the right room. These poems offer company. They are not a
+            program, and they are not a substitute for care.
+          </p>
+        </section>
 
-      {/* ── Reader Response ── */}
-      <section className="book-page-section">
-        <h2>Reader Response</h2>
-        <p>★★★★★ 5.0 — 8 reviews on Amazon</p>
-        <p>#1 New Release in Women's Poetry</p>
-      </section>
+        <section>
+          <h2>Four movements</h2>
+          <ol className="book-page-parts">
+            <li>
+              <strong>The Forgetting</strong> — How a woman learns to disappear.
+              Silence as survival. Obedience mistaken for peace.
+            </li>
+            <li>
+              <strong>The Search</strong> — The ache that becomes a compass.
+              Moon, wind, stars, dust. Something in the dark still breathing.
+            </li>
+            <li>
+              <strong>The Remembering</strong> — Moonlight as recognition. The
+              name returns — not spoken, but remembered. The self that was never
+              lost, only unclaimed.
+            </li>
+            <li>
+              <strong>The Return</strong> — A woman who walks back into her own
+              light. Not as triumph — as arrival.
+            </li>
+          </ol>
+        </section>
 
-      {/* ── Purchase ── */}
-      <section className="book-page-section">
-        <h2>Get the Book</h2>
-        <p>
-          <a
-            href="https://www.amazon.com/Poet-Who-Forgot-Her-Name/dp/B0GDVZ1WMC"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Amazon →
-          </a>
-        </p>
-      </section>
+        <section>
+          <h2>From the prologue</h2>
+          <blockquote className="book-page-excerpt">
+            <p>
+              The night found me
+              <br />
+              before I found myself.
+              <br />
+              She leaned close,
+              <br />
+              moon-breath trembling on my cheek,
+              <br />
+              and whispered, <em>Child…</em>
+              <br />
+              <em>you have been gone too long.</em>
+            </p>
+            <p>
+              I tried to answer
+              <br />
+              but my voice was dust,
+              <br />
+              a forgotten language
+              <br />
+              tucked beneath my ribs.
+              <br />
+              So the stars spoke for me.
+              <br />
+              They pulsed like a broken heartbeat
+              <br />
+              trying to remember its rhythm.
+            </p>
+          </blockquote>
+        </section>
 
-      <section className="book-page-section">
-        <h2>Questions Readers Ask</h2>
-        <h3>What is <em>The Poet Who Forgot Her Name</em> about?</h3>
-        <p>
-          It is a poetry collection about trauma, survival, lost identity,
-          finding your voice, emotional healing, and returning to yourself.
-        </p>
-        <h3>Is it a trauma-recovery book?</h3>
-        <p>
-          It is literary poetry grounded in themes of trauma and emotional
-          healing. It can offer recognition and language for difficult
-          experiences, but it is not therapy or a substitute for professional
-          care.
-        </p>
-        <h3>Who is Diana Wallace?</h3>
-        <p>
-          Diana Wallace is a poet, filmmaker, and author of The Forgetting
-          trilogy. <em>The Poet Who Forgot Her Name</em> is Book I.
-        </p>
-        <p>
-          <Link href="/guides/poetry-for-healing-after-trauma">
-            Read: Poetry for Healing After Trauma →
-          </Link>
-        </p>
-        <p>
-          <Link href="/guides/poems-about-finding-yourself-again">
-            Read: Poems About Finding Yourself Again →
-          </Link>
-        </p>
-      </section>
+        <section>
+          <h2>Details</h2>
+          <dl className="book-page-details">
+            <div>
+              <dt>Format</dt>
+              <dd>Paperback</dd>
+            </div>
+            <div>
+              <dt>Pages</dt>
+              <dd>216</dd>
+            </div>
+            <div>
+              <dt>ISBN</dt>
+              <dd>979-8-241-72353-6</dd>
+            </div>
+            <div>
+              <dt>Published</dt>
+              <dd>2025</dd>
+            </div>
+            <div>
+              <dt>Edition</dt>
+              <dd>First</dd>
+            </div>
+            <div>
+              <dt>Place</dt>
+              <dd>Book I of three</dd>
+            </div>
+          </dl>
+          <p className="book-proof">5.0 — 8 reviews on Amazon</p>
+          <p className="book-proof">#1 New Release in Women&apos;s Poetry</p>
+          <BuyButton href={amazon} />
+        </section>
 
-      {/* ── Continue the Trilogy ── */}
-      <section className="book-page-section">
-        <h2>Continue the Trilogy</h2>
-        <p>
-          <Link href="/books/the-girl-who-grew-fangs">
-            Read Book II: The Girl Who Grew Fangs →
-          </Link>
-        </p>
-        <p>
-          <Link href="/audio">
-            Listen: Expect Nothing podcast →
-          </Link>
-        </p>
-      </section>
+        <section>
+          <h2>Questions readers ask</h2>
+          {faq.map((item) => (
+            <div key={item.q}>
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </div>
+          ))}
+          <p>
+            <Link href="/guides/poetry-for-healing-after-trauma">
+              Poetry for healing after trauma
+            </Link>
+          </p>
+          <p>
+            <Link href="/guides/poems-about-finding-yourself-again">
+              Poems about finding yourself again
+            </Link>
+          </p>
+        </section>
+
+        <section>
+          <h2>The other books</h2>
+          <p>
+            <Link href="/books/the-girl-who-grew-fangs">
+              Book II: <em>The Girl Who Grew Fangs</em>
+            </Link>
+          </p>
+          <p>
+            <Link href="/books/year-of-the-fire-horse">
+              Book III: <em>Year of the Fire Horse</em> — coming
+            </Link>
+          </p>
+        </section>
+      </div>
     </article>
   );
 }

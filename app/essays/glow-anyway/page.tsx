@@ -108,7 +108,7 @@ export default function GlowAnywayPage() {
 
         <p>
           Fire runs through this entire body of work. It is the central
-          symbol. The Forgetting trilogy moves through three arcs — Moon, Wolf,
+          symbol. The three books move through three arcs — Moon, Wolf,
           Fire — and each one is a form of burning. The Moon burns cold and
           reflected. The Wolf burns feral and close to the ground. The Fire
           Horse burns openly, in full daylight, with nothing left to hide.
@@ -242,7 +242,7 @@ export default function GlowAnywayPage() {
 
       <hr style={{ margin: "2rem 0", opacity: 0.2 }} />
       <p>
-        <Link href="/books">Read The Forgetting trilogy →</Link>
+        <Link href="/books">Read the books →</Link>
       </p>
       <p>
         <Link href="/audio">Listen: Expect Nothing podcast →</Link>

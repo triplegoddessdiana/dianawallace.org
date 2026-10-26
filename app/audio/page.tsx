@@ -6,18 +6,18 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Expect Nothing Podcast — Audio by Diana Wallace",
   description:
-    "Expect Nothing — spoken pieces by Diana Wallace meant to be listened to, not skimmed. The audio companion to The Forgetting trilogy.",
+    "Expect Nothing — spoken pieces by Diana Wallace meant to be listened to, not skimmed. The audio companion to the books.",
   alternates: { canonical: "/audio" },
   openGraph: {
     title: "Expect Nothing Podcast · Diana Wallace",
     description:
-      "Spoken pieces meant to be listened to, not skimmed. The audio companion to The Forgetting trilogy.",
+      "Spoken pieces meant to be listened to, not skimmed. The audio companion to the books.",
   },
 };
 
 export default function AudioPage() {
   return (
-    <main className="page audio">
+    <div className="audio">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -119,12 +119,12 @@ export default function AudioPage() {
 
       <section className="audioClosing">
         <p>
-          <Link href="/books">Explore The Forgetting trilogy →</Link>
+          <Link href="/books">Read the books →</Link>
         </p>
         <p>
           <Link href="/essays">Read the essays →</Link>
         </p>
       </section>
-    </main>
+    </div>
   );
 }

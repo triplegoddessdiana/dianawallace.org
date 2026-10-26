@@ -1,35 +1,48 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Cormorant_Garamond, Source_Sans_3, Source_Serif_4 } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
 import BodyClass from "./BodyClass";
+import World from "./components/World";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const display = Cormorant_Garamond({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const body = Source_Serif_4({
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "600"],
+  style: ["normal", "italic"],
 });
+
+const sans = Source_Sans_3({
+  variable: "--font-sans",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
+
+const description =
+  "Diana Wallace is a poet. The books are The Poet Who Forgot Her Name, The Girl Who Grew Fangs, and Year of the Fire Horse, which is still on its way.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dianawallace.org"),
   title: {
-    default: "Diana Wallace — Poet, Author, Essayist",
+    default: "Diana Wallace — Poet",
     template: "%s · Diana Wallace",
   },
-  description:
-    "Diana Wallace is the author of The Forgetting trilogy and host of the Expect Nothing podcast. Essays, poetry books, and audio on human agency, memory, and meaning in an automated world.",
+  description,
   keywords: [
     "Diana Wallace",
     "Diana Wallace poet",
-    "Diana Wallace author",
     "Diana Wallace books",
-    "The Forgetting trilogy",
-    "Expect Nothing podcast",
-    "human agency",
+    "The Poet Who Forgot Her Name",
+    "The Girl Who Grew Fangs",
+    "Year of the Fire Horse",
     "poetry",
     "poems about forgetting",
     "poems about returning",
@@ -39,14 +52,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@DianaWallace888",
     creator: "@DianaWallace888",
+    images: ["/covers/the-poet-who-forgot-her-name.jpg"],
   },
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Diana Wallace",
-    title: "Diana Wallace — Poet, Author, Essayist",
-    description:
-      "Author of The Forgetting trilogy. Essays, poetry books, and audio on human agency, memory, and meaning.",
+    title: "Diana Wallace — Poet",
+    description,
+    images: ["/covers/the-poet-who-forgot-her-name.jpg"],
   },
 };
 
@@ -70,15 +84,9 @@ export default function RootLayout({
                 "https://x.com/DianaWallace888",
                 "https://www.amazon.com/stores/Diana-Wallace/author/B0DQ1LGG1K",
               ],
-              jobTitle: "Author",
-              description:
-                "Poet and author of The Forgetting trilogy. Host of the Expect Nothing podcast.",
-              knowsAbout: [
-                "Poetry",
-                "Human Agency",
-                "Philosophy",
-                "Creative Writing",
-              ],
+              jobTitle: "Poet",
+              description,
+              knowsAbout: ["Poetry"],
             }),
           }}
         />
@@ -90,8 +98,7 @@ export default function RootLayout({
               "@type": "WebSite",
               name: "Diana Wallace",
               url: "https://dianawallace.org",
-              description:
-                "Essays, books, and audio by Diana Wallace on human agency, memory, and meaning in an automated world.",
+              description,
               author: {
                 "@type": "Person",
                 name: "Diana Wallace",
@@ -100,8 +107,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${display.variable} ${body.variable} ${sans.variable}`}>
         <BodyClass />
+        <World />
 
         <header className="site-header">
           <nav className="site-nav" aria-label="Primary">
@@ -110,15 +118,9 @@ export default function RootLayout({
             </Link>
 
             <div className="nav-links">
-              <Link href="/work">The Work</Link>
               <Link href="/books">Books</Link>
-              <Link href="/audio">Audio</Link>
-              <Link href="/essays">Essays</Link>
-              <Link href="/philosophy">Philosophy</Link>
               <Link href="/about">About</Link>
-              <Link className="start-button" href="/start">
-                Start Here
-              </Link>
+              <Link href="/contact">Contact</Link>
             </div>
           </nav>
         </header>
@@ -127,25 +129,22 @@ export default function RootLayout({
 
         <footer className="site-footer">
           <p className="footer-links">
-            <span>© {new Date().getFullYear()} Diana Wallace</span>
-            <span aria-hidden="true"> · </span>
-            <a href="/books">Books</a>
-            <span aria-hidden="true"> · </span>
-            <a href="/essays">Essays</a>
-            <span aria-hidden="true"> · </span>
-            <a href="/audio">Audio</a>
-            <span aria-hidden="true"> · </span>
-            <a href="/privacy">Privacy</a>
-            <span aria-hidden="true"> · </span>
-            <a href="/press">Press</a>
-            <span aria-hidden="true"> · </span>
-            <a href="/contact">Contact</a>
+            <Link href="/books">Books</Link>
+            <Link href="/about">About</Link>
+            <Link href="/essays">Essays</Link>
+            <Link href="/audio">Audio</Link>
+            <Link href="/press">Press</Link>
+            <Link href="/contact">Contact</Link>
+            <Link href="/privacy">Privacy</Link>
           </p>
+          <p className="footer-note">© {new Date().getFullYear()} Diana Wallace</p>
 
           <figure className="footer-signature">
-            <img
+            <Image
               src="/about/diana-wallace-signature.png"
-              alt="Signature of Diana Wallace, poet"
+              alt="Signature of Diana Wallace"
+              width={492}
+              height={240}
             />
           </figure>
         </footer>

@@ -1,96 +1,88 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { AMAZON_AUTHOR, books } from "@/app/lib/books";
+import BuyButton from "@/app/components/BuyButton";
 
 export const metadata = {
-  title: "Books — The Forgetting Trilogy",
+  title: "Books",
   description:
-    "Poetry books by Diana Wallace. The Forgetting trilogy: The Poet Who Forgot Her Name (2025) and The Girl Who Grew Fangs (2026). Poems about forgetting, remembering, and returning.",
+    "Poetry by Diana Wallace: The Poet Who Forgot Her Name, The Girl Who Grew Fangs, and Year of the Fire Horse, coming. Buy the published books on Amazon.",
   alternates: { canonical: "/books" },
+  openGraph: {
+    title: "Books · Diana Wallace",
+    description:
+      "The Poet Who Forgot Her Name, The Girl Who Grew Fangs, and Year of the Fire Horse, coming.",
+    images: ["/covers/the-poet-who-forgot-her-name.jpg"],
+  },
 };
 
 export default function BooksPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "Books by Diana Wallace",
+            itemListElement: books.map((book, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              name: book.title,
+              url: `https://dianawallace.org${book.href}`,
+            })),
+          }),
+        }}
+      />
+
       <h1>Books</h1>
+      <p className="lede">
+        Three books. Two you can hold now. One still on its way.
+      </p>
 
-      <hr className="hr" />
-
-      {/* Book II */}
-      <section className="book-row">
-        <Link href="/books/the-girl-who-grew-fangs">
-          <Image
-            className="book-cover"
-            src="/covers/the-girl-who-grew-fangs.jpg"
-            alt="Cover of The Girl Who Grew Fangs by Diana Wallace"
-            width={140}
-            height={210}
-            priority
-          />
-        </Link>
-
-        <div>
-          <h2 className="book-title">
-            <Link
-              href="/books/the-girl-who-grew-fangs"
-              style={{ borderBottom: "none" }}
-            >
-              The Girl Who Grew Fangs
+      <div className="catalog">
+        {books.map((book) => (
+          <article key={book.href} className="catalog-row">
+            <Link href={book.href} className="cover-link">
+              <Image
+                src={book.cover}
+                alt={`Cover of ${book.title} by Diana Wallace`}
+                width={book.coverWidth}
+                height={book.coverHeight}
+                priority={book.roman === "I"}
+              />
             </Link>
-          </h2>
-          <p className="book-meta">
-            A Book of Remembering After the Fall Into Shadow&ensp;·&ensp;2026
-          </p>
 
-          <p>
-            Book II of The Forgetting trilogy — 53 poems tracing the feral
-            arc from shadow to selfhood.
-          </p>
+            <div className="catalog-copy">
+              <p className="book-kicker">Book {book.roman}</p>
+              <h2>
+                <Link href={book.href}>{book.title}</Link>
+              </h2>
+              <p className="book-page-subtitle">{book.subtitle}</p>
+              <p>{book.blurb}</p>
+              {book.price ? <p className="book-price">{book.price}</p> : null}
+              {book.proof ? <p className="book-proof">{book.proof}</p> : null}
 
-          <p className="book-link">
-            <Link href="/books/the-girl-who-grew-fangs">Read more →</Link>
-          </p>
-        </div>
-      </section>
+              <div className="catalog-actions">
+                {book.amazon ? (
+                  <BuyButton href={book.amazon} />
+                ) : (
+                  <Link className="text-arrow" href={book.href}>
+                    Read the dedication
+                  </Link>
+                )}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
 
-      <hr className="hr" />
-
-      {/* Book I */}
-      <section className="book-row">
-        <Link href="/books/the-poet-who-forgot-her-name">
-          <Image
-            className="book-cover"
-            src="/covers/the-poet-who-forgot-her-name.jpg"
-            alt="Cover of The Poet Who Forgot Her Name by Diana Wallace"
-            width={140}
-            height={210}
-          />
-        </Link>
-
-        <div>
-          <h2 className="book-title">
-            <Link
-              href="/books/the-poet-who-forgot-her-name"
-              style={{ borderBottom: "none" }}
-            >
-              The Poet Who Forgot Her Name
-            </Link>
-          </h2>
-          <p className="book-meta">
-            Poems for the Returning Self&ensp;·&ensp;2025
-          </p>
-
-          <p>
-            Book I of The Forgetting trilogy — a poetry collection in four
-            movements: forgetting, searching, remembering, returning.
-          </p>
-
-          <p className="book-link">
-            <Link href="/books/the-poet-who-forgot-her-name">
-              Read more →
-            </Link>
-          </p>
-        </div>
-      </section>
+      <p className="catalog-note">
+        <a href={AMAZON_AUTHOR} target="_blank" rel="noreferrer">
+          Diana Wallace on Amazon
+        </a>
+      </p>
     </>
   );
 }
